@@ -22,7 +22,7 @@ import useThemeStore from "../store/store";
 
 export default function HeaderClient() {
     const { mode, toggleTheme } = useThemeStore();
-    const [searchBoxShow , setSearchBoxShow] = useState<boolean>(false)
+    const [searchBoxShow, setSearchBoxShow] = useState<boolean>(false)
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const pages = ["Home", "About"];
@@ -37,7 +37,6 @@ export default function HeaderClient() {
     return (
         <>
 
-           
             {/* 🧭 Menu (mobile + desktop) */}
             <Box>
                 <IconButton
@@ -79,34 +78,35 @@ export default function HeaderClient() {
                 </Menu>
             </Box>
 
-             {/* 🔍 Search box */}
-            <Paper
-                component="form"
-                sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    width: { xs: 200, sm: "fit-content" },
-                    p: "2px 4px",
-                    borderRadius: 100
-                }}
-                onSubmit={(e)=> e.preventDefault()}
-            >
-                <InputBase
-                    hidden={searchBoxShow ? false : true}
-                    sx={{ ml: 1, flex: 1, }}
-                    placeholder="Search…"
-                    inputProps={{ "aria-label": "search" }}
-                    onBlur={()=>setSearchBoxShow(false)}
 
-                />
-                <IconButton type="submit" sx={{ p: "10px" }} aria-label="search" onClick={()=>setSearchBoxShow(true)}>
-                    <SearchIcon />
-                </IconButton>
-            </Paper>
 
 
             {/* 🛒 Right Section */}
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                {/* 🔍 Search box */}
+                <Paper
+                    component="form"
+                    sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        width: { xs: 200, sm: "fit-content" },
+                        p: "2px 4px",
+                        borderRadius: 100
+                    }}
+                    onSubmit={(e) => e.preventDefault()}
+                >
+                    <InputBase
+                        hidden={searchBoxShow ? false : true}
+                        sx={{ ml: 1, flex: 1, }}
+                        placeholder="Search…"
+                        inputProps={{ "aria-label": "search" }}
+                        onBlur={() => setSearchBoxShow(false)}
+
+                    />
+                    <IconButton type="submit" sx={{ p: "10px" }} aria-label="search" onClick={() => setSearchBoxShow(true)}>
+                        <SearchIcon />
+                    </IconButton>
+                </Paper>
                 <IconButton color="inherit">
                     <Badge badgeContent={3} color="error">
                         <ShoppingCartIcon />
