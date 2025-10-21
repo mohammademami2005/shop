@@ -5,7 +5,7 @@ import FechData from "./api/getData";
 import CategoriesBox from "./components/categoriesBox";
 
 export default async function Home() {
-  const data = await FechData("https://dummyjson.com/products/category-list")
+  const { data , error} = await FechData("https://dummyjson.com/products/category-list")
   console.log(data)
   return (
     <>

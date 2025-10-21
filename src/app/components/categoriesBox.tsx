@@ -11,11 +11,12 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import React from 'react'
 import Link from 'next/link';
+import { ProductResponse } from '../api/getData';
 
-export default function CategoriesBox({ data }: { data: string[] }) {
+export default function CategoriesBox({ data }:{data:ProductResponse}) {
     const theme = useTheme()
     return (
-        <Container maxWidth={false} sx={{ display: "flex", flexWrap: "wrap", width: "100%", height: "auto", backgroundColor: theme.palette.background.default  }} >
+        <Container maxWidth={false} sx={{ display: "flex", flexWrap: "wrap", width: "100%", height: "auto", backgroundColor: theme.palette.background.default }} >
             <Typography variant='h5' color={theme.palette.text.primary} >
                 categories
             </Typography>
@@ -25,6 +26,7 @@ export default function CategoriesBox({ data }: { data: string[] }) {
                 spaceBetween={5}
                 slidesPerView={8}
                 navigation={false}
+                loop={true}
                 // pagination={{ clickable: true }}
                 // scrollbar={{ draggable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
@@ -40,21 +42,23 @@ export default function CategoriesBox({ data }: { data: string[] }) {
                                     flexDirection: "column",
                                     alignItems: "center",
                                     p: 2,
-                                    m: 1,
+                                    // m: 1,
                                     borderRadius: 2,
                                     // boxShadow: 2,
-                                    width: 120, 
+                                    width: 120,
                                 }}
                             >
-                                {/* تصویر دایره‌ای */}
-                                <Avatar
-                                    src={item + ".png"}
-                                    alt={item}
-                                    sx={{ width: 100,objectFit:"contain", height: 100, bgcolor: "gray" }}
-                                />
-                                {/* اسم محصول */}
-                                <Link href={"categories"+item}>
-                                    <Typography variant="body1" align="center" sx={{ color: theme.palette.text.primary }}>
+                                <Link href={"category/" + item}
+                                    className='flex flex-col items-center gap-5'
+                                >
+                                    {/* تصویر دایره‌ای */}
+                                    <Avatar
+                                        src={item + ".png"}
+                                        alt={item}
+                                        sx={{ width: 100, objectFit: "contain", height: 100, bgcolor: "gray" }}
+                                    />
+                                    {/* اسم محصول */}
+                                    <Typography variant="body1" align="center" fontSize={16} sx={{ color: theme.palette.text.primary }}>
                                         {item}
                                     </Typography>
                                 </Link>
