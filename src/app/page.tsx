@@ -1,10 +1,14 @@
 import { Container, Typography } from "@mui/material";
-import Image from "next/image";
+import Header from "./components/Header";
 
 export default function Home() {
   return (
-    <Container maxWidth={"lg"} sx={{background:"red"}} >
-      <Typography variant="h1" >home page </Typography>
+    <>
+    <Container maxWidth={false} sx={{background:"red"}} >
+    <Header  />
+
+      {/* <Typography variant="h1" >home page </Typography> */}
     </Container>
+    </>
   );
 }

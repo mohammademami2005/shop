@@ -6,6 +6,7 @@ import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
 import lightTheme from "./theme/lightTheme";
 import darkTheme from "./theme/darkTheme";
+import useThemeStore from "./store/store";
 
 
 const muiCache = createCache({ key: "mui", prepend: true });
@@ -15,11 +16,7 @@ export default function ThemeRegistry({
 }: {
   children: React.ReactNode;
 }) {
-  const [mode, setMode] = React.useState<"light" | "dark">("light");
-
-  const toggleTheme = () => {
-    setMode((prev) => (prev === "light" ? "dark" : "light"));
-  };
+  const {mode} = useThemeStore()
 
   const theme = mode === "light" ? lightTheme : darkTheme;
 
@@ -27,22 +24,6 @@ export default function ThemeRegistry({
     <CacheProvider value={muiCache}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <button
-          onClick={toggleTheme}
-          style={{
-            position: "fixed",
-            top: 16,
-            right: 16,
-            background: theme.palette.primary.main,
-            color: theme.palette.getContrastText(theme.palette.primary.main),
-            border: "none",
-            borderRadius: 8,
-            padding: "6px 12px",
-            cursor: "pointer",
-          }}
-        >
-          {mode === "light" ? "Dark" : "Light"} Mode
-        </button>
         {children}
       </ThemeProvider>
     </CacheProvider>
