@@ -67,7 +67,7 @@ export default async function page({ params }: { params: { category: string } })
                                 </CardContent>
                             </CardActionArea>
                             <Box sx={{ width: "100%", display: 'flex', justifyContent: "space-around" }}>
-                                <Button variant='myCustom'>❤️</Button>
+                                <Button sx={{border:`1px solid` , borderColor:"primay"}}>❤️</Button>
                                 <Button variant='myCustom' sx={{ width: "65%" }} >add to cart</Button>
                             </Box>
                         </Card>

@@ -6,7 +6,7 @@ import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
 import lightTheme from "./theme/lightTheme";
 import darkTheme from "./theme/darkTheme";
-import useThemeStore from "./store/store";
+import {useThemeStore} from "./store/store";
 
 const muiCache = createCache({ key: "mui", prepend: true });
 

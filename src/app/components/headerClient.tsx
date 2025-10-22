@@ -18,7 +18,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import useThemeStore from "../store/store";
+import {useThemeStore} from "../store/store";
 
 export default function HeaderClient() {
     const { mode, toggleTheme } = useThemeStore();
