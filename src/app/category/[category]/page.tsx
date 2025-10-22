@@ -3,16 +3,16 @@ import { Box, Container, Typography } from '@mui/material'
 import Image from 'next/image'
 import React, { JSX } from 'react'
 
-async function getData(url:string) {
-    try {
-        const res = await fetch(url)
-        if(!res.ok) throw new Error("faild to fetch data" + res.status)
-        const data = res.json()
-        return {data , err : null}
-    } catch (err) {
-        return {data : null , error : err}
-    }
-}
+// async function getData(url:string) {
+//     try {
+//         const res = await fetch(url)
+//         if(!res.ok) throw new Error("faild to fetch data" + res.status)
+//         const data = res.json()
+//         return {data , err : null}
+//     } catch (err) {
+//         return {data : null , error : err}
+//     }
+// }
 
 export default async function page({params}:{params:{category:string}}): Promise<JSX.Element> {
     console.log(params.category)

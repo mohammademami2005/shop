@@ -15,6 +15,7 @@ import { ProductResponse } from '../api/getData';
 
 export default function CategoriesBox({ data }:{data:ProductResponse}) {
     const theme = useTheme()
+    console.log(data)
     return (
         <Container maxWidth={false} sx={{ display: "flex", flexWrap: "wrap", width: "100%", height: "auto", backgroundColor: theme.palette.background.default }} >
             <Typography variant='h5' color={theme.palette.text.primary} >

@@ -60,7 +60,11 @@ export default async function FechData(
 
     const data: ProductResponse = await res.json();
     return { data, error: null };
-  } catch (err: any) {
-    return { data: null, error: err };
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      return { data: null, error: err };
+    } else {
+      return { data: null, error: new Error("An unknown error occurred") };
+    }
   }
 }
