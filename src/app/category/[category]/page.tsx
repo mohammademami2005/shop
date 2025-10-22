@@ -26,14 +26,14 @@ export default async function page({ params }: { params: { category: string } })
         )
     }
     return (
-        <Container maxWidth={false} sx={{paddingTop:7}} >
+        <Container maxWidth={false} sx={{ paddingTop: 7 }} >
             <Box display={"flex"} flexWrap={"wrap"} gap={4} justifyContent={'center'} >
                 {data && data.products.map((item, i) => {
                     return (
-                        <Card key={i} sx={{ maxWidth: 290 , borderRadius:"25px" ,padding:"10px" }}>
-                            <CardActionArea>
+                        <Card key={i} sx={{ maxWidth: 290, borderRadius: "25px", padding: "10px" }}>
+                            <CardActionArea sx={{ minHeight: 370 }}>
                                 <CardMedia
-                                sx={{ borderRadius:"5%" , width:"80%" , height:"80%" , margin:"auto"}}
+                                    sx={{ borderRadius: "5%", width: "80%", height: "80%", margin: "auto" }}
                                     component="img"
                                     height="100"
                                     image={item.thumbnail}
@@ -46,22 +46,30 @@ export default async function page({ params }: { params: { category: string } })
                                             <Image key={i} src={img} alt={item.title} width={70} height={70} />
                                         ))}
                                     </Box> */}
-                                    <Typography variant='body1'>{item.brand}</Typography>
-                                    <Typography gutterBottom variant="h5" component="div">
-                                         <Link href={`/products/${item.id}-${item.title}`}>{item.title}</Link>
+                                    <Typography variant='body1'color='secondary'>{item.brand}</Typography>
+                                    <Typography gutterBottom variant="h5" component="div" 
+                                    title={item.title}
+                                    sx={{
+                                        display:'flex',
+                                        justifyContent:"start",
+                                        alignItems:"center",
+                                        height:60,
+                                        fontSize:18
+                                    }}>
+                                        <Link href={`/products/${item.id}-${item.title}`}>{item.title}</Link>
                                     </Typography>
-                                    <Typography gutterBottom variant="h5" >
+                                    <Typography gutterBottom variant="h5"  color='info'>
                                         ${item.price}
                                     </Typography>
                                     <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                                         ⭐{item.rating} / 5
                                     </Typography>
-                                    <Box sx={{width:"100%" , display:'flex' , justifyContent:"space-around"}}>
-                                        <Button variant='outlined'>add to cart</Button>
-                                        <Button variant='text'>❤️</Button>
-                                    </Box>
                                 </CardContent>
                             </CardActionArea>
+                            <Box sx={{ width: "100%", display: 'flex', justifyContent: "space-around" }}>
+                                <Button variant='myCustom'>❤️</Button>
+                                <Button variant='myCustom' sx={{ width: "65%" }} >add to cart</Button>
+                            </Box>
                         </Card>
                     )
                 })}

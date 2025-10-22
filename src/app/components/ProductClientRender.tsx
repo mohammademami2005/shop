@@ -25,22 +25,23 @@ export default function ProductClientRender({ data }: { data: Product }) {
 
                 </Box>
             </Box>
-            <Box width={"48%"} height={"100%"} display={"flex"} flexDirection={'column'} justifyContent={"center"} gap={7} padding={"2%"}>
+            <Box width={"48%"} height={"100%"} display={"flex"} flexDirection={'column'} justifyContent={"center"} gap={2} padding={"2%"}>
                 <Typography variant="h1" fontSize={32}>
                     {data.title}
                 </Typography>
                 <Typography variant="body2" color={theme.palette.text.secondary} fontSize={25}>
-                   <Typography variant="caption" fontSize={18} color={theme.palette.text.primary}>by</Typography> {data.brand}
+                   {data.brand? <Typography variant="caption" fontSize={18} color={theme.palette.text.primary}>by</Typography> : null} {data.brand}
                 </Typography>
                 <Typography variant="body2" fontSize={35} >
                    ${data.price}
                 </Typography>
-                <Typography variant="h6" fontSize={18} >
+                <Typography variant="h6" fontSize={18} color={theme.palette.custom.texts.slate400}>
                     {data.description}
                 </Typography>
                 <Box  display={"flex"} justifyContent={"space-evenly"}>
-                    <Button variant="contained" sx={{width:"20%" }}>❤️</Button>
-                    <Button variant="contained" sx={{width:"65%" , borderRadius:2 , background:theme.palette.primary.main}}>add to cart</Button>
+                    <Button variant="myCustom" sx={{width:"15%" }}>❤️</Button>
+                    {/* <AddToCartBtn  sx={{width:"20%" }}>❤️</AddToCartBtn> */}
+                    <Button variant="myCustom" sx={{width:"80%" , borderRadius:2 , background:theme.palette.primary.main}}>add to cart</Button>
                 </Box>
             </Box>
         </Box>
