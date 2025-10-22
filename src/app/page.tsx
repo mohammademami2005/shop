@@ -1,7 +1,5 @@
 import { Container, Typography } from "@mui/material";
-import Header from "./components/Header";
 import HomeSlider from "./components/HomeSlider";
-import FechData from "./api/getData";
 import CategoriesBox from "./components/categoriesBox";
 
 async function getData(url:string):Promise<{data : string[] | null , error : null | unknown}> {
@@ -22,7 +20,6 @@ export default async function Home() {
   return (
     <>
     <Container maxWidth={false} sx={{background:"red"}} disableGutters >
-    <Header  />
     <HomeSlider />
       {/* <Typography variant="h1" >home page </Typography> */}
       <CategoriesBox data={data}/>

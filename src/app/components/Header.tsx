@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function Header() {
   return (
-    <AppBar position='static' >
+    <AppBar position='static'>
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
         <Link href={"/"} className='flex justify-around items-center'>
           {/* logo */}
