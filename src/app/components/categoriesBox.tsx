@@ -9,9 +9,12 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import React from 'react'
 import Link from 'next/link';
+import { Categories } from '../page';
+import Image from 'next/image';
+import EastIcon from '@mui/icons-material/East';
 
 interface CategoriesBoxProps {
-    data: string[] | null;
+    data: Categories[] | null;
 }
 
 // روش صحیح با const و React.FC
@@ -34,53 +37,41 @@ const CategoriesBox: React.FC<CategoriesBoxProps> = ({ data }) => {
             }}
         >
             <Typography variant='h5' color={theme.palette.text.primary}>
-                Categories
+                SHOP BY COLLECTION
             </Typography>
+            <Box sx={{display:"flex" , flexDirection:{xs:"column" , lg:"row" }}}>
 
-            <Swiper
-                modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-                spaceBetween={5}
-                slidesPerView={8}
-                navigation={false}
-                loop={true}
-                autoplay={{ delay: 3000 }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
-            >
                 {data.map((item, i) => (
-                    <SwiperSlide key={i}>
-                        <Box
-                            sx={{
-                                display: "flex",
-                                flexDirection: "column",
-                                alignItems: "center",
-                                p: 2,
-                                borderRadius: 2,
-                                width: 120,
-                            }}
+                    <Box
+                    key={i}
+                        sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            p: 2,
+                            borderRadius: 2,
+                            // width: 120,
+                            position:"relative"
+                        }}
+                    >
+                        <Link
+                            href={"category/" + item.name}
+                            className='flex flex-col items-center gap-5 rounded-3xl  overflow-hidden sm:flex-col lg:flex-row '
                         >
-                            <Link
-                                href={"category/" + item}
-                                className='flex flex-col items-center gap-5'
-                            >
-                                <Avatar
-                                    src={item + ".png"}
-                                    alt={item}
-                                    sx={{ width: 100, height: 100, objectFit: "contain", bgcolor: "gray" }}
-                                />
-                                <Typography
-                                    variant="body1"
-                                    align="center"
-                                    fontSize={16}
-                                    sx={{ color: theme.palette.text.primary }}
-                                >
-                                    {item}
-                                </Typography>
-                            </Link>
-                        </Box>
-                    </SwiperSlide>
+                            <Image src={item.img} alt={item.name} width={800} height={800} />
+                            <Typography variant='body2' fontSize={20} sx={{
+                                position: 'absolute', bottom: 30, right: 30,
+                                color: "black",
+                                '&:hover': {
+                                    color: '#4287f5',
+                                    transform: 'scale(1.05)',
+                                    transition: "all 0.5s"
+                                },
+                            }}>{item.name} <EastIcon /> </Typography>
+                        </Link>
+                    </Box>
                 ))}
-            </Swiper>
+            </Box>
         </Container>
     )
 }

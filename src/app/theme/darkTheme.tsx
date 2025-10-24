@@ -46,7 +46,7 @@ const darkTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: "'Roboto', sans-serif",
+    fontFamily: 'Madefor, Arial, sans-serif',
   },
   components: {
     MuiButton: {
