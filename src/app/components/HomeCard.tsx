@@ -7,14 +7,14 @@ import React, { useEffect, useState } from 'react'
 export default function HomeCard() {
   const [randomNum ,setRandomNum] = useState(()=>Math.floor(Math.random() * (12 - 1+1)))
   const theme = useTheme()
-  useEffect(()=>{
-   const interval =  setInterval(() => {
-        const rand = Math.floor(Math.random() * (12 - 1+1))
-        setRandomNum(rand)  
-      }, 30000);
+  // useEffect(()=>{
+  //  const interval =  setInterval(() => {
+  //       const rand = Math.floor(Math.random() * (12 - 1+1))
+  //       setRandomNum(rand)  
+  //     }, 30000);
 
-      return ()=> clearInterval(interval)
-  },[])
+  //     return ()=> clearInterval(interval)
+  // },[])
 
 
 

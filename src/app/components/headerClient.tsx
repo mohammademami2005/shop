@@ -118,12 +118,13 @@ export default function HeaderClient() {
                     ))}
                 </Menu> */}
                 <Drawer
-                    anchor="top"
+                    anchor="left"
                     open={open}
                     onClose={() => toggleDrawer(false)}
                     PaperProps={{
                         sx: {
                             top: 'var(--template-frame-height, 0px)',
+                            width:"80%"
                         },
                     }}
                 >
