@@ -15,8 +15,7 @@ export default function Header() {
         </Link>
         <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
           {navLinks.map((link) => (
-            <Link  key={link} href={"/"}>
-
+            <Link  key={link} href={link}>
               {link}
             </Link>
           ))}

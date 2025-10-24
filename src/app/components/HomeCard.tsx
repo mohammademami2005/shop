@@ -38,7 +38,7 @@ export default function HomeCard() {
   console.log(data)
 
   return (
-    <Card sx={{ maxWidth: 450 , padding:3, borderRadius:8 }}>
+    <Card sx={{ maxWidth: 450 , padding:3, borderRadius:8 , display:{sx:"none" , lg:"flex"} , flexDirection:"column" }}>
       <CardMedia
         sx={{ height: 250 , borderRadius:3 , width:"100%"}}
         image={data?.img}

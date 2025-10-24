@@ -34,9 +34,10 @@ const CategoriesBox: React.FC<CategoriesBoxProps> = ({ data }) => {
                 height: "auto",
                 backgroundColor: theme.palette.background.default,
                 gap: 2,
+                marginTop:20
             }}
         >
-            <Typography variant='h5' color={theme.palette.text.primary}>
+            <Typography variant='h5' color={theme.palette.text.primary} paddingInline={3}>
                 SHOP BY COLLECTION
             </Typography>
             <Box sx={{display:"flex" , flexDirection:{xs:"column" , lg:"row" }}}>
