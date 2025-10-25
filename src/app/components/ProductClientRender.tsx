@@ -4,15 +4,16 @@ import Image from "next/image";
 
 import { AllData } from "../page";
 import Link from "next/link";
-export default function ProductClientRender({ data }: { data: AllData[] | null }) {
+export default function ProductClientRender({ data }: { data: AllData[]|AllData | null }) {
     // const [state, setState] = useState(0)
     const theme = useTheme()
     // const {addItem , items} = useCartStore()
     // console.log(items)
+      const dataArray = Array.isArray(data) ? data : data ? [data] : [];
     return (
         <Stack spacing={3} useFlexGap direction={"row"}  sx={{flexWrap:"wrap", padding:2 , alignItems:"center"}}  width={"100%"} height={"100%"} >
             {
-                data?.map((item, i) => (
+                dataArray?.map((item, i) => (
                     <Link  key={i} href={item.category+"/"+item.id+item.name} className="flex justify-start flex-wrap items-center sm:w-full md:w-[30%] rounded-2xl "  >
                         <Box  className='productImgChange' margin={"auto"} borderRadius={5} position={"relative"} overflow={'hidden'}>
                             <Image src={item.img[0]} alt={item.name} width={400} height={400}  />
