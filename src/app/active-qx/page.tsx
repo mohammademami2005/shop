@@ -20,7 +20,7 @@ export default async function Page() {
         
       </Box>
 
-          <ProductClientRender data={newData} />
+          {/* <ProductClientRender data={newData} /> */}
       
     </Container>
   )
