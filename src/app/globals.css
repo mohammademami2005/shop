@@ -35,13 +35,22 @@ body {
   font-family: 'Madefor', sans-serif;
 }
 
-/* .productImgChange{
-  &:hover{
-    &:first-of-type{
+.productImgChange{
+  >img{
+    transition: 1s;
+    &:last-child{
       opacity: 0;
     }
-    &:last-of-type{
-      opacity: 1;
+  }
+
+  &:hover{
+    >img{
+      &:last-child{
+        opacity: 1;
+      }
+      &:first-child{
+        opacity: 0;
+      }
     }
   }
-} */
+}

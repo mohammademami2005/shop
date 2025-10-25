@@ -67,7 +67,7 @@ export default function BestSells({ data }: { data: AllData[] | null }) {
                         >
                             <Image src={item.img[0]} alt={item.name} width={800} height={800} className='rounded-3xl'  />
                             <Typography variant='body2' fontSize={20} sx={{
-                                color: "black",
+                                color: theme.palette.text.primary,
                                 '&:hover': {
                                     color: '#4287f5',
                                     transform: 'scale(1.05)',

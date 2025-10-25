@@ -6,7 +6,7 @@ const darkTheme = createTheme({
     primary: { main: "#90caf9" },
     secondary: { main: "#ce93d8" },
     info: { main: "#f00" },
-    background: { default: "#121212", paper: "#1e1e1e" },
+    background: { default: "#1e1e1e", paper: "#1e1e1e" },
     text: { primary: "#fff" },
     custom: {
       // پس‌زمینه

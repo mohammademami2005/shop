@@ -32,7 +32,7 @@ export default function HeaderClient() {
 
     const [open, setOpen] = useState(false)
     const toggleDrawer = (newOpen: boolean) => { setOpen(newOpen) }
-    const navLinks = ["Shop", 'Best Sellers', 'Active QX', 'Artisanal', 'Kids', 'About Us']
+    const navLinks = ["Shop", 'best-sellers', 'active-qx', 'artisanal', 'kids', 'About']
 
     // const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     //     setAnchorEl(event.currentTarget);

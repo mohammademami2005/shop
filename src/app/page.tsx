@@ -12,9 +12,9 @@ export interface Categories {
   id: number
 }
 
-async function getCategory(url: string): Promise<{ category: Categories[] | null, error: null | unknown }> {
+export async function getCategory(): Promise<{ category: Categories[] | null, error: null | unknown }> {
   try {
-    const res = await fetch(url)
+    const res = await fetch("https://68fa4adfef8b2e621e7f86c5.mockapi.io/shopify/category-list")
     if (!res.ok) throw new Error("filed to fetch")
     const category: Categories[] = await res.json()
     return { category, error: null }
@@ -46,7 +46,7 @@ export async function getData(url: string): Promise<{ data: AllData[] | null, da
 
 export default async function Home() {
   // const { data , error} = await FechData("https://dummyjson.com/products/category-list")
-  const { category, error } = await getCategory("https://68fa4adfef8b2e621e7f86c5.mockapi.io/shopify/category-list")
+  const { category, error } = await getCategory()
   const { data, dataError } = await getData("https://68fa4adfef8b2e621e7f86c5.mockapi.io/shopify/products")
   console.log(category)
   return (

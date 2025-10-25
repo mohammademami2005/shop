@@ -3,9 +3,11 @@ import React from 'react'
 import Image from 'next/image';
 import HeaderClient from './headerClient';
 import Link from 'next/link';
+import { getCategory } from '../page';
 
-export default function Header() {
-  const navLinks = ["Shop", 'Best Sellers', 'Active QX', 'Artisanal', 'Kids', 'About Us']
+export default async function Header() {
+  const {category , error} = await getCategory()
+  const navLinks = ["Shop", 'Best Sellers', 'active-qx', 'artisanal', 'kids', 'About Us']
   return (
     <AppBar position='static' sx={{ backgroundColor: "primary" }}>
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -13,12 +15,15 @@ export default function Header() {
           {/* logo */}
           <Typography variant='body1' fontSize={30}>QUENX.</Typography>
         </Link>
-        <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
-          {navLinks.map((link) => (
-            <Link  key={link} href={link}>
-              {link}
+        <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 , fontWeight:500}}>
+          <Link href={"Shop"} >Shop</Link>
+          <Link href={"best-sellers"} >best sells</Link>
+          {category?.map((link) => (
+            <Link  key={link.id} href={link.name}>
+              {link.name}
             </Link>
           ))}
+          <Link href={"about"} >about us</Link>
         </Box>
         <HeaderClient />
       </Toolbar>
