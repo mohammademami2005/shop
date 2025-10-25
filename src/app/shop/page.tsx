@@ -19,10 +19,11 @@ export default async function Page() {
       </Box>
 
       <Box display={'flex'}>
-        <Box>
-          {/* <ProductClientRender data={data} /> */}
+        <Box width={"30%"}>filtering</Box>
+
+        <Box width={"70%"}>
+          <ProductClientRender data={data} />
         </Box>
-        <Box></Box>
       </Box>
     </Container>
   )
