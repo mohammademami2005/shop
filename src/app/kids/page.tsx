@@ -7,21 +7,22 @@ import { getData } from '../page'
 
 export default async function Page() {
   const { data, dataError } = await getData("https://68fa4adfef8b2e621e7f86c5.mockapi.io/shopify/products")
-  const newData = data&& data.filter(item=> item.category === "kids")
+  const myData = Array.isArray(data) ? data : data ? [data] : []
+  const newData = myData.filter(item => item.category === "kids")
   return (
-        <Container maxWidth={false} disableGutters sx={{ marginTop: 4 }} >
-      <Box sx={{ paddingLeft:3 , width:"30%"}}>
+    <Container maxWidth={false} disableGutters sx={{ marginTop: 4 }} >
+      <Box sx={{ paddingLeft: 3, width: "30%" }}>
         <Breadcrumbs aria-label="breadcrumb">
           <Link color="inherit" href="/">
             Home
           </Link>
           <Typography sx={{ color: 'text.primary', fontSize: 20 }}>kids</Typography>
         </Breadcrumbs>
-        
+
       </Box>
 
-          <ProductClientRender data={newData} />
-      
+      <ProductClientRender data={newData} />
+
     </Container>
   )
 }
