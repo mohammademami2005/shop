@@ -53,8 +53,8 @@ export default function Filtering({ data }: { data: AllData[] | null }) {
 
     return (
         <Container maxWidth={false} disableGutters >
-            <Typography variant='h1' fontSize={50} width={"100%"} margin={1}>{filter ? filter.value : "All Product"}</Typography>
-            <Box display={'flex'} paddingLeft={2} gap={5} marginTop={5}>
+            <Typography variant='h1' fontSize={50}  margin={1}>{filter ? filter.value : "All Product"}</Typography>
+            <Box display={'flex'}  paddingLeft={2} gap={5} marginTop={5}>
                 <Stack direction={'column'} useFlexGap width={"20%"} position={"relative"} >
                     <Stack gap={2} direction={"column"} width={"100%"} className="sticky top-0 left-0 " >
                         <Typography variant='body1' fontSize={25} margin={1}>Browse by</Typography>

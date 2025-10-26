@@ -63,7 +63,7 @@ export default function BestSells({ data }: { data: AllData[]|AllData | null }) 
                         }}
                     >
                         <Link
-                            href={"bestSells/" + item.name}
+                            href={"best-sellers/" +item.id+ item.name}
                             className='flex flex-col items-center gap-5  '
                             style={{flexDirection:"column"}}
                         >

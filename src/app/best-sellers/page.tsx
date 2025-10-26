@@ -7,7 +7,8 @@ import { getData } from '../page'
 
 export default async function Page() {
   const { data, dataError } = await getData("https://68fa4adfef8b2e621e7f86c5.mockapi.io/shopify/products")
-  const newData = data&& data.filter(item=> item.bestSells === true)
+   let  myData = Array.isArray(data) ? data : data? [data] : []
+  const newData = myData&& myData.filter(item=> item.bestSells === true)
   return (
         <Container maxWidth={false} disableGutters sx={{ marginTop: 4 }} >
       <Box sx={{ paddingLeft:3 , width:"30%"}}>

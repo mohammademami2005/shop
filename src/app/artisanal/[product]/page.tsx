@@ -20,8 +20,8 @@ export default async function Page({ params }: { params: { product: string } }) 
             color="inherit" href="/">
             Home
           </Link>
-          <Link href={"/active-qx"}>
-            active-qx
+          <Link href={"/artisanal"}>
+            artisanal
           </Link>
           <Typography sx={{ color: 'text.primary', fontSize: 20 }}>{newData.map(item => item.name)}</Typography>
         </Breadcrumbs>

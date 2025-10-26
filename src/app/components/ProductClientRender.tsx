@@ -23,10 +23,11 @@ export default function ProductClientRender({ data }: { data: AllData[]|AllData 
                             <Typography variant="subtitle1" textAlign={"justify"} width={"100%"} fontSize={{sx:4 , md:20}}>
                                 {item.name}
                             </Typography>
-                            <Typography variant="body2" fontSize={{sx:4 , md:16}} >
+                            <Typography variant="body2" fontWeight={800} fontSize={{sx:4 , md:16}} >
                                 ${item.price}
                             </Typography>
                         </Box>
+
                     </Link>
                 ))
             }

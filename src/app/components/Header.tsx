@@ -16,10 +16,10 @@ export default async function Header() {
           <Typography variant='body1' fontSize={30}>QUENX.</Typography>
         </Link>
         <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 , fontWeight:500}}>
-          <Link href={"shop"} >Shop</Link>
-          <Link href={"best-sellers"} >best sells</Link>
+          <Link href={"/shop"} >Shop</Link>
+          <Link href={"/best-sellers"} >best sells</Link>
           {category?.map((link) => (
-            <Link  key={link.id} href={link.name}>
+            <Link  key={link.id} href={"/"+link.name}>
               {link.name}
             </Link>
           ))}
