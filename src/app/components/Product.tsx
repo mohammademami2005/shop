@@ -19,11 +19,11 @@ export default function Product({ data }: { data: AllData }) {
         <Container maxWidth={false} disableGutters sx={{ width: "100%", marginTop: 5 }}>
             <Stack direction={{ xs: "column", lg: "row" }} >
                 <Box display={'flex'} flexDirection={{ xs: "column", md: "row" }} width={{ xs: "100%", md: "60%" }}>
-                        <Image src={data.img[change ? 1 : 0]} width={800} height={800} alt={data.name} className='object-cover  h-[90vh]' />
+                        <Image src={data.img[change]} width={800} height={800} alt={data.name} className='object-cover  h-[90vh]' />
                     <Stack direction={{ xs: "row", lg: "column" }} order={{ xs: 2, lg: "inherit" }} width={"20%"}>
                         {data.img.map((img, k) => (
                             <Button key={k} onClick={()=>setChange(k)}>
-                                <Image src={data.img[change]} width={100} height={100} alt={data.name} />
+                                <Image src={img} width={100} height={100} alt={data.name} />
                             </Button>
                         ))}
                     </Stack>
