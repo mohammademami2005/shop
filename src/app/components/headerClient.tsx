@@ -33,7 +33,7 @@ export default function HeaderClient() {
 
     const [open, setOpen] = useState(false)
     const toggleDrawer = (newOpen: boolean) => { setOpen(newOpen) }
-    const navLinks = ["Shop", 'best-sellers', 'active-qx', 'artisanal', 'kids', 'About']
+    const navLinks = ["shop", 'best-sellers', 'active-qx', 'artisanal', 'kids', 'About']
 
     return (
         <>
