@@ -7,11 +7,13 @@ import Image from 'next/image'
 import EastIcon from '@mui/icons-material/East';
 
 
-export default function BestSells({ data }: { data: AllData[] | null }) {
+
+export default function BestSells({ data }: { data: AllData[]|AllData | null }) {
     const [newData, setNewData] = useState<AllData[] | undefined>()
+    const arrData = Array.isArray(data) ? data : data ? [data] : [];
 
     useEffect(() => {
-        const bestSells = data?.filter((item, i) => {
+        const bestSells = arrData?.filter((item, i) => {
             return item.bestSells === true
         })
 

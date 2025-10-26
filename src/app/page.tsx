@@ -33,7 +33,7 @@ export interface AllData {
   id: number
 }
 
-export async function getData(url: string): Promise<{ data: AllData[] | null, dataError: null | unknown }> {
+export async function getData(url: string): Promise<{ data: AllData[]| AllData | null, dataError: null | unknown }> {
   try {
     const res = await fetch(url)
     if (!res.ok) throw new Error("filed to fetch")

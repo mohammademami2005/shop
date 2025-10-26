@@ -56,7 +56,7 @@ const CategoriesBox: React.FC<CategoriesBoxProps> = ({ data }) => {
                         }}
                     >
                         <Link
-                            href={"category/" + item.name}
+                            href={item.name}
                             className='flex flex-col items-center gap-5 rounded-3xl  overflow-hidden sm:flex-col lg:flex-row '
                         >
                             <Image src={item.img} alt={item.name} width={800} height={800} />
