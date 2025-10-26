@@ -109,7 +109,7 @@ export default function HeaderClient() {
                             </IconButton>
                         </Box>
                         {navLinks.map((item, i) => (
-                            <MenuItem key={i} component={Link} onClick={() => toggleDrawer(false)} href={item}>{item}</MenuItem>
+                            <MenuItem key={i} component={Link} onClick={() => toggleDrawer(false)} href={"/"+item}>{item}</MenuItem>
                         ))}
 
                         <Divider sx={{ my: 3 }} />
