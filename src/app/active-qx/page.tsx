@@ -7,9 +7,9 @@ import { getData } from '../page'
 
 export default async function Page() {
   const { data, dataError } = await getData("https://68fa4adfef8b2e621e7f86c5.mockapi.io/shopify/products")
- let  myData = Array.isArray(data) ? data : data? [data] : []
-  let newData = myData.filter(item=> item.category === "active-qx")
-  newData = newData &&[...newData]
+ const  myData = Array.isArray(data) ? data : data? [data] : []
+  const newData = myData.filter(item=> item.category === "active-qx")
+
 
   return (
         <Container maxWidth={false} disableGutters sx={{ marginTop: 4 }} >
