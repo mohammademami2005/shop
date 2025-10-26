@@ -6,15 +6,14 @@ import { AllData } from '../page'
 import { useCartStore } from '../store/store'
 
 export default function Product({ data }: { data: AllData }) {
-    const [change, setChange] = useState(false)
-    const handleChangeImg = () => {
-        setChange(!change)
-    }
+    const [change, setChange] = useState(0)
+
     const theme = useTheme()
 
     const { addItem, items, removeItem } = useCartStore()
     const productId = String(data.id)
     console.log(items)
+    console.log(data.img)
 
     return (
         <Container maxWidth={false} disableGutters sx={{ width: "100%", marginTop: 5 }}>
@@ -23,8 +22,8 @@ export default function Product({ data }: { data: AllData }) {
                         <Image src={data.img[change ? 1 : 0]} width={800} height={800} alt={data.name} className='object-cover  h-[90vh]' />
                     <Stack direction={{ xs: "row", lg: "column" }} order={{ xs: 2, lg: "inherit" }} width={"20%"}>
                         {data.img.map((img, k) => (
-                            <Button key={k} onClick={handleChangeImg}>
-                                <Image src={img} width={100} height={100} alt={data.name} />
+                            <Button key={k} onClick={()=>setChange(k)}>
+                                <Image src={data.img[change]} width={100} height={100} alt={data.name} />
                             </Button>
                         ))}
                     </Stack>
