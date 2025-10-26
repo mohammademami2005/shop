@@ -41,7 +41,7 @@ export default function Product({ data }: { data: AllData }) {
                 </Box>
                 <Stack width={{ xs: "100%", md: "35%" }} direction={"column"} paddingLeft={5} mt={5} useFlexGap justifyContent={"start"} gap={5}>
                     <Typography variant='h1' fontSize={{ xs: 20, md: 30, lg: 40 }}>{data.name}</Typography>
-                    <Typography variant='body1' fontSize={20}>${data.price}</Typography>
+                    <Typography variant='body1' fontSize={20}>${data.price}.00</Typography>
                     <Typography variant='body1' fontSize={20}>{data.description}</Typography>
 
                     <Typography variant='body2' fontSize={30}>quantity</Typography>
@@ -51,7 +51,7 @@ export default function Product({ data }: { data: AllData }) {
                         <Button sx={{ color: theme.palette.text.primary, fontSize: 22 }} variant='myCustom' onClick={() => quantityPlus(productId)} disabled={btnDesabled}>+</Button>
                     </Box>
                     <Box width={"100%"} display={"flex"} gap={1}>
-                        <Button variant='myCustom' sx={{ width: "65%" }} onClick={() => addItem({ id: productId, name: data.name, price: data.price, quantity: 1, category: data.category, description: data.description, img: data.img, bestSells: data.bestSells })}><Typography variant='subtitle1'>add to cart</Typography></Button>
+                        <Button variant='myCustom' sx={{ width: "65%" }} onClick={() => addItem({ id: productId, name: data.name, price: data.price, quantity: 1, category: data.category, description: data.description, img: data.img, bestSells: data.bestSells ,total:0 })}><Typography variant='subtitle1'>add to cart</Typography></Button>
                         <Button variant='text' sx={{ border: `1px solid ${theme.palette.text.primary}`, borderRadius: 4 }}>❤️</Button>
                     </Box>
                 </Stack>

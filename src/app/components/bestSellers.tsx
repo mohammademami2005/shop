@@ -8,7 +8,7 @@ import EastIcon from '@mui/icons-material/East';
 
 
 
-export default function BestSells({ data }: { data: AllData[]|AllData | null }) {
+export default function BestSells({ data }: { data: AllData[] | AllData | null }) {
     const [newData, setNewData] = useState<AllData[] | undefined>()
     const arrData = Array.isArray(data) ? data : data ? [data] : [];
 
@@ -37,15 +37,17 @@ export default function BestSells({ data }: { data: AllData[]|AllData | null }) 
                 <Typography variant='h5' color={theme.palette.text.primary}>
                     OUR BEST SELLERS
                 </Typography>
-                <Typography variant='body2' fontSize={20} sx={{
-                    color: "black",
-                    cursor: "pointer",
-                    '&:hover': {
-                        color: '#4287f5',
-                        transform: 'scale(1.05)',
-                        transition: "all 0.5s"
-                    },
-                }}>view all <EastIcon /> </Typography>
+                <Link href={"/best-sellers"}>
+                    <Typography variant='body2' fontSize={20} sx={{
+                        color: "black",
+                        cursor: "pointer",
+                        '&:hover': {
+                            color: '#4287f5',
+                            transform: 'scale(1.05)',
+                            transition: "all 0.5s"
+                        },
+                    }}>view all <EastIcon /> </Typography>
+                </Link>
             </Box>
             <Box sx={{ display: "flex", flexDirection: { xs: "column", lg: "row" } }}>
 
@@ -63,11 +65,11 @@ export default function BestSells({ data }: { data: AllData[]|AllData | null }) 
                         }}
                     >
                         <Link
-                            href={"best-sellers/" +item.id+ item.name}
+                            href={"best-sellers/" + item.id + item.name}
                             className='flex flex-col items-center gap-5  '
-                            style={{flexDirection:"column"}}
+                            style={{ flexDirection: "column" }}
                         >
-                            <Image src={item.img[0]} alt={item.name} width={800} height={800} className='rounded-3xl'  />
+                            <Image src={item.img[0]} alt={item.name} width={800} height={800} className='rounded-3xl' />
                             <Typography variant='body2' fontSize={20} sx={{
                                 color: theme.palette.text.primary,
                                 '&:hover': {

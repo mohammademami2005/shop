@@ -20,13 +20,14 @@ import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import { useThemeStore } from "../store/store";
+import { useCartStore, useThemeStore } from "../store/store";
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import Link from "next/link";
 
 export default function HeaderClient() {
     const { mode, toggleTheme } = useThemeStore();
     const [searchBoxShow, setSearchBoxShow] = useState<boolean>(false)
+    const { items } = useCartStore()
     // const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     // const open = Boolean(anchorEl);
 
@@ -34,18 +35,8 @@ export default function HeaderClient() {
     const toggleDrawer = (newOpen: boolean) => { setOpen(newOpen) }
     const navLinks = ["Shop", 'best-sellers', 'active-qx', 'artisanal', 'kids', 'About']
 
-    // const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    //     setAnchorEl(event.currentTarget);
-    // };
-    // const handleMenuClose = () => {
-    //     setAnchorEl(null);
-    // };
-
     return (
         <>
-
-
-
             {/* 🛒 Right Section */}
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                 {/* 🔍 Search box */}
@@ -72,11 +63,13 @@ export default function HeaderClient() {
                         <SearchIcon />
                     </IconButton>
                 </Paper>
-                <IconButton color="inherit">
-                    <Badge badgeContent={3} color="error">
-                        <ShoppingCartIcon />
-                    </Badge>
-                </IconButton>
+                <Link href={"/shop/cart"}>
+                    <IconButton color="inherit">
+                        <Badge badgeContent={items.length} color="error">
+                            <ShoppingCartIcon />
+                        </Badge>
+                    </IconButton>
+                </Link>
 
                 <Button color="inherit">Login</Button>
 
@@ -93,30 +86,6 @@ export default function HeaderClient() {
                     <MenuIcon />
                 </IconButton>
 
-
-
-
-                {/* Menu Dropdown for mobile
-                <Menu
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleMenuClose}
-                    anchorOrigin={{
-                        vertical: "center",
-                        horizontal: "right",
-                    }}
-                    transformOrigin={{
-                        vertical: "top",
-                        horizontal: "right",
-                    }}
-                    
-                >
-                    {navLinks.map((link) => (
-                        <MenuItem sx={{width:"100vw", height:"15vh"}} key={link} onClick={handleMenuClose}>
-                            {link}
-                        </MenuItem>
-                    ))}
-                </Menu> */}
                 <Drawer
                     anchor="left"
                     open={open}
@@ -124,7 +93,7 @@ export default function HeaderClient() {
                     PaperProps={{
                         sx: {
                             top: 'var(--template-frame-height, 0px)',
-                            width:"80%"
+                            width: "80%"
                         },
                     }}
                 >
@@ -140,7 +109,7 @@ export default function HeaderClient() {
                             </IconButton>
                         </Box>
                         {navLinks.map((item, i) => (
-                            <MenuItem key={i} component={Link} onClick={()=>toggleDrawer(false)} href={item}>{item}</MenuItem>
+                            <MenuItem key={i} component={Link} onClick={() => toggleDrawer(false)} href={item}>{item}</MenuItem>
                         ))}
 
                         <Divider sx={{ my: 3 }} />

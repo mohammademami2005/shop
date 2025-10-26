@@ -3,21 +3,12 @@ import { Button, Card, CardActions, CardContent, CardMedia, Typography, useTheme
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios"
 import React, { useEffect, useState } from 'react'
+import { useCartStore } from "../store/store";
 
 export default function HomeCard() {
   const [randomNum ,setRandomNum] = useState(()=>Math.floor(Math.random() * (12 - 1+1)))
   const theme = useTheme()
-  // useEffect(()=>{
-  //  const interval =  setInterval(() => {
-  //       const rand = Math.floor(Math.random() * (12 - 1+1))
-  //       setRandomNum(rand)  
-  //     }, 30000);
-
-  //     return ()=> clearInterval(interval)
-  // },[])
-
-
-
+  const {addItem}=useCartStore()
 
 
 
@@ -36,7 +27,7 @@ export default function HomeCard() {
 
 
   console.log(data)
-
+ const productId = String(data.id)
   return (
     <Card sx={{ maxWidth: 450 , padding:3, borderRadius:8 , display:{sx:"none" , lg:"flex"} , flexDirection:"column" }}>
       <CardMedia
@@ -49,14 +40,14 @@ export default function HomeCard() {
           {data?.name}
         </Typography>
         <Typography variant="subtitle1" sx={{ color: 'text.secondary' }}>
-          {data?.price}
+          ${data?.price}.00
         </Typography>
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
           {data?.description}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button variant="myCustom" sx={{color:theme.palette.text.primary,width:250}}>add to cart</Button>
+        <Button variant="myCustom" sx={{color:theme.palette.text.primary,width:250}} onClick={()=> addItem({ id: productId, name: data.name, price: data.price, quantity: 1, category: data.category, description: data.description, img: data.img, bestSells: data.bestSells ,total:0 })}>add to cart</Button>
       </CardActions>
     </Card>
   )

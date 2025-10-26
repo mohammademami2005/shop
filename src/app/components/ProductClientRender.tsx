@@ -24,7 +24,7 @@ export default function ProductClientRender({ data }: { data: AllData[]|AllData 
                                 {item.name}
                             </Typography>
                             <Typography variant="body2" fontWeight={800} fontSize={{sx:4 , md:16}} >
-                                ${item.price}
+                                ${item.price}.00
                             </Typography>
                         </Box>
 
