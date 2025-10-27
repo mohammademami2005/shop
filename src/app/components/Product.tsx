@@ -52,7 +52,6 @@ export default function Product({ data }: { data: AllData }) {
                     </Box>
                     <Box width={"100%"} display={"flex"} gap={1}>
                         <Button variant='myCustom' sx={{ width: "65%" }} onClick={() => addItem({ id: productId, name: data.name, price: data.price, quantity: 1, category: data.category, description: data.description, img: data.img, bestSells: data.bestSells ,total:0 })}><Typography variant='subtitle1'>add to cart</Typography></Button>
-                        <Button variant='text' sx={{ border: `1px solid ${theme.palette.text.primary}`, borderRadius: 4 }}>❤️</Button>
                     </Box>
                 </Stack>
             </Stack>
