@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import ProductClientRender from '../components/ProductClientRender'
 import { getData } from '../page'
+import Loading from './Loading'
 
 
 export default async function Page() {
@@ -10,6 +11,7 @@ export default async function Page() {
  const  myData = Array.isArray(data) ? data : data? [data] : []
   const newData = myData.filter(item=> item.category === "active-qx")
 
+  // if(dataError) return <Loading />
 
   return (
         <Container maxWidth={false} disableGutters sx={{ marginTop: 4 }} >

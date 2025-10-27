@@ -8,7 +8,6 @@ export default function Page() {
     const { addItem, items, quantityMinus, quantityPlus, removeItem, totalAmount } = useCartStore()
     const theme = useTheme()
 
-
     return (
         <section>
             <Container maxWidth={false} disableGutters sx={{ display: "flex", flexDirection: { xs: "column", lg: 'row' }, justifyContent: "space-evenly", padding: 5 }} >
@@ -42,7 +41,7 @@ export default function Page() {
                     })}
                 </Stack>
                 <Box position={"relative"} width={"30%"}>
-                    <Stack direction={"column"} width={"100%"} height={"80vh"}  position={"sticky"} top={"20%"} left={0} justifyContent={"start"} gap={5}>
+                    <Stack direction={"column"} width={"100%"} height={"80vh"} position={"sticky"} top={"20%"} left={0} justifyContent={"start"} gap={5}>
                         <Typography variant='h1' fontSize={{ xs: 20, lg: 30 }}>Order Summary</Typography>
                         <Divider />
                         <Box display={'flex'} justifyContent={"space-between"} flexDirection={"row"}>
