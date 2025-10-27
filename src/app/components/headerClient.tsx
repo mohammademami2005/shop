@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
     AppBar,
     Toolbar,
@@ -23,6 +23,10 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import { useCartStore, useThemeStore } from "../store/store";
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import Link from "next/link";
+import { useQueries, useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import { AllData } from "../page";
+import Search from "./search";
 
 export default function HeaderClient() {
     const { mode, toggleTheme } = useThemeStore();
@@ -34,35 +38,19 @@ export default function HeaderClient() {
     const [open, setOpen] = useState(false)
     const toggleDrawer = (newOpen: boolean) => { setOpen(newOpen) }
     const navLinks = ["shop", 'best-sellers', 'active-qx', 'artisanal', 'kids', 'About']
+    const [myData, setMyData] = useState<AllData[] | AllData | null>([])
+
 
     return (
         <>
             {/* 🛒 Right Section */}
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                 {/* 🔍 Search box */}
-                <Paper
-                    component="form"
-                    sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        width: { xs: "fit-content", sm: "fit-content" },
-                        p: "2px 4px",
-                        borderRadius: 100
-                    }}
-                    onSubmit={(e) => e.preventDefault()}
-                >
-                    <InputBase
-                        hidden={searchBoxShow ? false : true}
-                        sx={{ ml: 1, flex: 1, }}
-                        placeholder="Search…"
-                        inputProps={{ "aria-label": "search" }}
-                        onBlur={() => setSearchBoxShow(false)}
+                {/* <IconButton type="submit" sx={{ p: "10px" }} aria-label="search">
+                    <SearchIcon />
+                </IconButton> */}
 
-                    />
-                    <IconButton type="submit" sx={{ p: "10px" }} aria-label="search" onClick={() => setSearchBoxShow(true)}>
-                        <SearchIcon />
-                    </IconButton>
-                </Paper>
+                <Search />
                 <Link href={"/shop/cart"}>
                     <IconButton color="inherit">
                         <Badge badgeContent={items.length} color="error">
@@ -109,7 +97,7 @@ export default function HeaderClient() {
                             </IconButton>
                         </Box>
                         {navLinks.map((item, i) => (
-                            <MenuItem key={i} component={Link} onClick={() => toggleDrawer(false)} href={"/"+item}>{item}</MenuItem>
+                            <MenuItem key={i} component={Link} onClick={() => toggleDrawer(false)} href={"/" + item}>{item}</MenuItem>
                         ))}
 
                         <Divider sx={{ my: 3 }} />
