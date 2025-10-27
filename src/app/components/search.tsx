@@ -120,7 +120,10 @@ export default function Search() {
                             </Typography>
                         </Stack>
                     ) : (
-                        <ProductClientRender data={filteredData} />
+                         <Box display={"flex"} alignItems={"center"} justifyContent={"center"} width={"100%"} height={"100%"} paddingLeft={{xs:10 ,lg:0}}>
+
+                             <ProductClientRender data={filteredData} />
+                         </Box>
                     )}
 
                 </Box>

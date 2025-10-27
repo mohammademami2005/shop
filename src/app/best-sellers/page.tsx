@@ -7,11 +7,11 @@ import { getData } from '../page'
 
 export default async function Page() {
   const { data, dataError } = await getData("https://68fa4adfef8b2e621e7f86c5.mockapi.io/shopify/products")
-   const  myData = Array.isArray(data) ? data : data? [data] : []
-  const newData = myData&& myData.filter(item=> item.bestSells === true)
+  const myData = Array.isArray(data) ? data : data ? [data] : []
+  const newData = myData && myData.filter(item => item.bestSells === true)
   return (
-        <Container maxWidth={false} disableGutters sx={{ marginTop: 4 }} >
-      <Box sx={{ paddingLeft:3 , width:"30%"}}>
+    <Container maxWidth={false} disableGutters sx={{ marginTop: 4 }} >
+      <Box sx={{ paddingLeft: 3, width: "30%" }}>
         <Breadcrumbs aria-label="breadcrumb">
           <Link color="inherit" href="/">
             Home
@@ -19,8 +19,11 @@ export default async function Page() {
           <Typography sx={{ color: 'text.primary', fontSize: 20 }}>Best Sellers</Typography>
         </Breadcrumbs>
       </Box>
-          <ProductClientRender data={newData} />
-      
+      <Box display={"flex"} alignItems={"center"} justifyContent={"center"} width={"100%"} height={"100%"} paddingLeft={{xs:10 ,lg:0}}>
+        <ProductClientRender data={newData} />
+
+      </Box>
+
     </Container>
   )
 }

@@ -15,6 +15,7 @@ import {
     Drawer,
     Divider,
 } from "@mui/material";
+import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -59,7 +60,9 @@ export default function HeaderClient() {
                     </IconButton>
                 </Link>
 
-                <Button color="inherit">Login</Button>
+                <IconButton color="inherit" sx={{display:{xs:"none" , lg:"flex"}}}>
+                    <AccountCircleRoundedIcon />
+                </IconButton>
 
                 <IconButton color="inherit" onClick={toggleTheme}>
                     {mode === "light" ? <LightModeIcon /> : <DarkModeIcon />}

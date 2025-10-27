@@ -8,25 +8,27 @@ import Loading from './Loading'
 
 export default async function Page() {
   const { data, dataError } = await getData("https://68fa4adfef8b2e621e7f86c5.mockapi.io/shopify/products")
- const  myData = Array.isArray(data) ? data : data? [data] : []
-  const newData = myData.filter(item=> item.category === "active-qx")
+  const myData = Array.isArray(data) ? data : data ? [data] : []
+  const newData = myData.filter(item => item.category === "active-qx")
 
   // if(dataError) return <Loading />
 
   return (
-        <Container maxWidth={false} disableGutters sx={{ marginTop: 4 }} >
-      <Box sx={{ paddingLeft:3 , width:"30%"}}>
+    <Container maxWidth={false} disableGutters sx={{ marginTop: 4 }} >
+      <Box sx={{ paddingLeft: 3, width: "30%" }}>
         <Breadcrumbs aria-label="breadcrumb">
           <Link color="inherit" href="/">
             Home
           </Link>
           <Typography sx={{ color: 'text.primary', fontSize: 20 }}>active-qx</Typography>
         </Breadcrumbs>
-        
+
+      </Box>
+      <Box display={"flex"} alignItems={"center"} justifyContent={"center"} width={"100%"} height={"100%"} paddingLeft={{ xs: 10, lg: 0 }}>
+
+        <ProductClientRender data={newData} />
       </Box>
 
-          <ProductClientRender data={newData} />
-      
     </Container>
   )
 }

@@ -20,8 +20,10 @@ export default async function Page() {
         </Breadcrumbs>
 
       </Box>
+      <Box display={"flex"} alignItems={"center"} justifyContent={"center"} width={"100%"} height={"100%"} paddingLeft={{ xs: 10, lg: 0 }}>
 
-      <ProductClientRender data={newData} />
+        <ProductClientRender data={newData} />
+      </Box>
 
     </Container>
   )
