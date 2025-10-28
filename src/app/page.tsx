@@ -81,7 +81,8 @@ export default async function Home() {
 
         <Box sx={{backgroundImage:"url(/background2.png)" , backgroundRepeat:"no-repeat" , backgroundSize:"cover" , width:"100%" , height:{xs:"120vh" , lg:"150vh"} , backgroundPosition:"center" , marginTop:5 , display:"flex"  , justifyContent:{xs:"start" , lg:"space-evenly"} , alignItems:{xs:"center" , lg:"start"} , padding:{xs:5 , lg:0}, paddingTop:{xs:10 , lg:10}}} flexDirection={{xs:"column" , lg:"row"}} gap={{xs:2,lg:0}} color={"black"}>
         <Typography variant="h2" width={{xs:"80%" , lg:"40%"}} height={{xs:"auto" , lg:"20%"}} fontWeight={700} fontSize={{xs:35 ,lg:40}}>STEP INTO SUSTAINABILITY</Typography>
-        <Typography variant="body1" width={{xs:"80%" , lg:"40%"}} fontSize={{xs:16 , lg:20}}>This is the space to introduce visitors to the business or brand. Briefly explain who's behind it, what it does and what makes it unique. Share its core values and what this site has to offer.</Typography>
+       <Typography variant="body1" width={{xs:"80%" , lg:"40%"}} fontSize={{xs:16 , lg:20}}>This is the space to introduce visitors to the business or brand. Briefly explain who&apos;s behind it, what it does and what makes it unique. Share its core values and what this site has to offer.</Typography>
+
         </Box>
 
         <Box >
