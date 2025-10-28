@@ -14,6 +14,7 @@ import {
     Paper,
     Drawer,
     Divider,
+    Avatar,
 } from "@mui/material";
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import MenuIcon from "@mui/icons-material/Menu";
@@ -28,29 +29,33 @@ import { useQueries, useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { AllData } from "../page";
 import Search from "./search";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { usePathname } from "next/navigation";
 
 export default function HeaderClient() {
     const { mode, toggleTheme } = useThemeStore();
-    const [searchBoxShow, setSearchBoxShow] = useState<boolean>(false)
     const { items } = useCartStore()
-    // const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-    // const open = Boolean(anchorEl);
+
+    const path = usePathname()
 
     const [open, setOpen] = useState(false)
-    const toggleDrawer = (newOpen: boolean) => { setOpen(newOpen) }
+    // const toggleDrawer = (newOpen: boolean) => { setOpen(newOpen) }
     const navLinks = ["shop", 'best-sellers', 'active-qx', 'artisanal', 'kids', 'About']
     const [myData, setMyData] = useState<AllData[] | AllData | null>([])
 
 
+    const toggleDrawer = React.useCallback((newOpen: boolean) => setOpen(newOpen), [])
+
+    useEffect(() => {
+        toggleDrawer(false)
+    }, [path])
+
     return (
         <>
             {/* 🛒 Right Section */}
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                {/* 🔍 Search box */}
-                {/* <IconButton type="submit" sx={{ p: "10px" }} aria-label="search">
-                    <SearchIcon />
-                </IconButton> */}
+            <Box component={"section"} sx={{ display: "flex", alignItems: "center", gap: 1 }}>
 
+                {/* 🔍 Search box */}
                 <Search />
                 <Link href={"/shop/cart"}>
                     <IconButton color="inherit">
@@ -60,12 +65,12 @@ export default function HeaderClient() {
                     </IconButton>
                 </Link>
 
-                <IconButton color="inherit" sx={{display:{xs:"none" , lg:"flex"}}}>
+                <IconButton color="inherit" sx={{ display: { xs: "none", lg: "flex" } }}>
                     <AccountCircleRoundedIcon />
                 </IconButton>
 
                 <IconButton color="inherit" onClick={toggleTheme}>
-                    {mode === "light" ? <LightModeIcon /> : <DarkModeIcon />}
+                    {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
                 </IconButton>
                 {/* 🧭 Menu (mobile + desktop) */}
                 <IconButton
@@ -92,19 +97,29 @@ export default function HeaderClient() {
                         <Box
                             sx={{
                                 display: 'flex',
-                                justifyContent: 'flex-end',
+                                justifyContent: 'space-between',
                             }}
                         >
+                            <IconButton size="large"  >
+                                <AccountCircleRoundedIcon sx={{ fontSize: 50 }} />
+                            </IconButton>
+
                             <IconButton onClick={() => toggleDrawer(false)}>
                                 <CloseRoundedIcon />
                             </IconButton>
                         </Box>
+                        <Divider sx={{ my: 3 }} />
                         {navLinks.map((item, i) => (
-                            <MenuItem key={i} component={Link} onClick={() => toggleDrawer(false)} href={"/" + item}>{item}</MenuItem>
+                            <MenuItem key={i} onClick={() => toggleDrawer(false)}>
+                                <Link href={"/" + item} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                    {item}
+                                </Link>
+                            </MenuItem>
+
                         ))}
 
                         <Divider sx={{ my: 3 }} />
-                        <MenuItem>
+                        {/* <MenuItem>
                             <Button color="primary" variant="contained" fullWidth>
                                 Sign up
                             </Button>
@@ -113,7 +128,11 @@ export default function HeaderClient() {
                             <Button color="primary" variant="contained" fullWidth>
                                 Sign in
                             </Button>
-                        </MenuItem>
+                        </MenuItem> */}
+                        <Link href={"/"} className='flex justify-center items-center h-[37vh]'>
+                            {/* logo */}
+                            <Typography variant='body1' fontSize={30}>QUENX.</Typography>
+                        </Link>
                     </Box>
                 </Drawer>
             </Box>

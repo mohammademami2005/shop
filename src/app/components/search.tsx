@@ -24,7 +24,7 @@ const style = {
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
-    p: 4,
+    // p: 4,
     overflowY: "auto",
 };
 
@@ -80,7 +80,7 @@ export default function Search() {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                    <Stack direction={"row"} justifyContent={"center"} paddingInline={10} position={"sticky"} top={0} left={0} zIndex={10000000009}>
+                    <Stack direction={"row"} justifyContent={"center"} paddingInline={10} position={"sticky"} top={10} left={0} zIndex={10000000009}>
                         <IconButton type="button" aria-label="close" onClick={() => handleClose()} sx={{position:"absolute" , top:0 , right:0}}>
                             <CloseIcon />
                         </IconButton>
@@ -120,7 +120,7 @@ export default function Search() {
                             </Typography>
                         </Stack>
                     ) : (
-                         <Box display={"flex"} alignItems={"center"} justifyContent={"center"} width={"100%"} height={"100%"} paddingLeft={{xs:10 ,lg:0}}>
+                         <Box display={"flex"} alignItems={"center"} justifyContent={"center"} width={"100vw"} height={"100%"} marginTop={2}  paddingLeft={{xs:0 ,lg:0}}>
 
                              <ProductClientRender data={filteredData} />
                          </Box>

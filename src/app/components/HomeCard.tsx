@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios"
 import React, { useEffect, useState } from 'react'
 import { useCartStore } from "../store/store";
+import Link from "next/link";
 
 export default function HomeCard() {
   const [randomNum, setRandomNum] = useState(() => Math.floor(Math.random() * (12 - 1 + 1)))
@@ -29,32 +30,34 @@ export default function HomeCard() {
   console.log(data)
   const productId = String(data?.id)
   return (
-    <Card sx={{ maxWidth:450, padding: 3, borderRadius: 8, display: { sx: "none", lg: "flex" }, flexDirection: "column" }}>
-      <CardMedia
-        sx={{ height: { xs: 250, lg: 250 }, borderRadius: 3, width: "100%" }}
-        image={data?.img}
-        title="green iguana"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {data?.name}
-        </Typography>
-        <Typography variant="subtitle1" fontWeight={900} sx={{ color: 'text.secondary' }}>
-          ${data?.price}.00
-        </Typography>
-        <Typography variant="body2" fontSize={{ xs: 12, lg: 16 }} sx={{
-          display: '-webkit-box',
-          WebkitLineClamp: 2, // فقط دو خط نشون بده
-          WebkitBoxOrient: 'vertical',
-          overflow: 'hidden',
-          textOverflow: 'ellipsis',
-        }}>
-          {data?.description}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button variant="myCustom" sx={{ color: theme.palette.text.primary, width: 250 }} onClick={() => addItem({ id: productId, name: data.name, price: data.price, quantity: 1, category: data.category, description: data.description, img: data.img, bestSells: data.bestSells, total: 0 })}>add to cart</Button>
-      </CardActions>
-    </Card>
+    <Link href={data?.category + '/' + data?.id + data?.name}>
+      <Card sx={{ maxWidth: 450, padding: 3, borderRadius: 8, display: { sx: "none", lg: "flex" }, flexDirection: "column" }}>
+        <CardMedia
+          sx={{ height: { xs: 250, lg: 250 }, borderRadius: 3, width: "100%" }}
+          image={data?.img}
+          title="green iguana"
+        />
+        <CardContent>
+          <Typography  variant="h5" component="div">
+            {data?.name}
+          </Typography>
+          <Typography variant="subtitle1" fontWeight={900} sx={{ color: 'text.secondary' }}>
+            ${data?.price}.00
+          </Typography>
+          <Typography variant="body2" fontSize={{ xs: 12, lg: 16 }} sx={{
+            display: '-webkit-box',
+            WebkitLineClamp: 2, // فقط دو خط نشون بده
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+          }}>
+            {data?.description}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button variant="myCustom" sx={{ color: theme.palette.text.primary, width: "100%" }} onClick={() => addItem({ id: productId, name: data.name, price: data.price, quantity: 1, category: data.category, description: data.description, img: data.img, bestSells: data.bestSells, total: 0 })}>add to cart</Button>
+        </CardActions>
+      </Card>
+    </Link>
   )
 }

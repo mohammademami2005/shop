@@ -14,7 +14,7 @@ export default function ProductClientRender({ data }: { data: AllData[] | AllDat
         <Stack spacing={{xs:3 , lg:5}} useFlexGap direction={"row"} sx={{ flexWrap: "wrap", padding: 2, alignItems: "center", paddingLeft: { xs: 0, lg: 10 }, justifyContent: {xs:"center" , lg:"start"} }} gap={{xs:5 ,lg:5}} width={"100%"} height={"100%"} >
             {
                 dataArray?.map((item, i) => (
-                    <Box key={i} position={"relative"} width={{ xs: 150, lg: 300 }} >
+                    <Box key={i} position={"relative"} width={{ xs: 140, lg: 300 }} >
                         <Link  href={item.category + "/" + item.id + item.name}  >
 
                             <Box className='productImgChange' margin={"auto"} borderRadius={5} position={"relative"} overflow={'hidden'} >
