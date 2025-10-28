@@ -109,26 +109,19 @@ export default function HeaderClient() {
                             </IconButton>
                         </Box>
                         <Divider sx={{ my: 3 }} />
-                        {navLinks.map((item, i) => (
-                            <MenuItem key={i} onClick={() => toggleDrawer(false)}>
-                                <Link href={"/" + item} style={{ textDecoration: 'none', color: 'inherit' }}>
-                                    {item}
-                                </Link>
-                            </MenuItem>
-
-                        ))}
+                        <Box component={"nav"}>
+                            <Box component={"ul"} >
+                                {navLinks.map((item, i) => (
+                                    <MenuItem key={i} onClick={() => toggleDrawer(false)}>
+                                        <Link href={"/" + item} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                            {item}
+                                        </Link>
+                                    </MenuItem>
+                                ))}
+                            </Box>
+                        </Box>
 
                         <Divider sx={{ my: 3 }} />
-                        {/* <MenuItem>
-                            <Button color="primary" variant="contained" fullWidth>
-                                Sign up
-                            </Button>
-                        </MenuItem>
-                        <MenuItem>
-                            <Button color="primary" variant="contained" fullWidth>
-                                Sign in
-                            </Button>
-                        </MenuItem> */}
                         <Link href={"/"} className='flex justify-center items-center h-[37vh]'>
                             {/* logo */}
                             <Typography variant='body1' fontSize={30}>QUENX.</Typography>

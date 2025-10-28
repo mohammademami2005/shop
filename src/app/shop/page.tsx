@@ -11,8 +11,8 @@ export default async function Page() {
    if(dataError) return <Error1 />
 
   return (
-    <Container maxWidth={false} disableGutters sx={{ marginTop: 4 , width:"100%" }} >
-      <Box sx={{ paddingLeft:3 , width:"30%"}}>
+    <Container component={"main"} maxWidth={false} disableGutters sx={{ marginTop: 4 , width:"100%" }} >
+      <Box component={"nav"} sx={{ paddingLeft:3 , width:"30%"}}>
         <Breadcrumbs aria-label="breadcrumb">
           <Link color="inherit" href="/">
             Home

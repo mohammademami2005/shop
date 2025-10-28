@@ -13,8 +13,8 @@ export default async function Page({ params }: { params: { product: string } }) 
 
   
   return (
-    <section>
-      <Box sx={{ paddingInline:3 }}>
+    <Box component={"main"}>
+      <Box component={"nav"} sx={{ paddingInline:3 }}>
         <Breadcrumbs aria-label="breadcrumb" sx={{marginTop:3}}>
           <Link
             color="inherit" href="/">
@@ -29,6 +29,6 @@ export default async function Page({ params }: { params: { product: string } }) 
           <Product key={i} data={item} />
         ))}
       </Box>
-    </section>
+    </Box>
   )
 }

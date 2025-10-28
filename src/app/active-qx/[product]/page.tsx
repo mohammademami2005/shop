@@ -1,6 +1,6 @@
 import Product from '@/app/components/Product'
 import { getData } from '@/app/page'
-import { Box, Breadcrumbs,Typography } from '@mui/material'
+import { Box, Breadcrumbs, Typography } from '@mui/material'
 import Link from 'next/link'
 import React from 'react'
 import Loading from './Loading'
@@ -8,16 +8,16 @@ import Loading from './Loading'
 
 export default async function Page({ params }: { params: { product: string } }) {
   const p = params
-  const id = parseInt( p.product)
+  const id = parseInt(p.product)
   const { data, dataError } = await getData("https://68fa4adfef8b2e621e7f86c5.mockapi.io/shopify/products/" + id)
   const newData = Array.isArray(data) ? data : data ? [data] : []
 
   // if(dataError)return <Loading />
-  
-  return (
 
-      <Box sx={{ paddingInline:3 }} component={"section"}>
-        <Breadcrumbs aria-label="breadcrumb" sx={{marginTop:3}}>
+  return (
+    <Box component={"main"}>
+      <Box  sx={{ paddingInline: 3 }} component={"nav"}>
+        <Breadcrumbs aria-label="breadcrumb" sx={{ marginTop: 3 }}>
           <Link
             color="inherit" href="/">
             Home
@@ -31,6 +31,7 @@ export default async function Page({ params }: { params: { product: string } }) 
           <Product key={i} data={item} />
         ))}
       </Box>
+    </Box>
 
   )
 }

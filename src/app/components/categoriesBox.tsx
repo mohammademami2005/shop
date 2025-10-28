@@ -26,6 +26,7 @@ const CategoriesBox: React.FC<CategoriesBoxProps> = ({ data }) => {
 
     return (
         <Container
+            component={'section'}
             maxWidth={false}
             sx={{
                 display: "flex",
@@ -34,17 +35,17 @@ const CategoriesBox: React.FC<CategoriesBoxProps> = ({ data }) => {
                 height: "auto",
                 backgroundColor: theme.palette.background.default,
                 gap: 2,
-                marginTop:20
+                marginTop: 20
             }}
         >
             <Typography variant='h5' color={theme.palette.text.primary} paddingInline={3}>
                 SHOP BY COLLECTION
             </Typography>
-            <Box sx={{display:"flex" , flexDirection:{xs:"column" , lg:"row" }}}>
+            <Box sx={{ display: "flex", flexDirection: { xs: "column", lg: "row" } }}>
 
                 {data.map((item, i) => (
                     <Box
-                    key={i}
+                        key={i}
                         sx={{
                             display: "flex",
                             flexDirection: "column",
@@ -52,7 +53,7 @@ const CategoriesBox: React.FC<CategoriesBoxProps> = ({ data }) => {
                             p: 2,
                             borderRadius: 2,
                             // width: 120,
-                            position:"relative"
+                            position: "relative"
                         }}
                     >
                         <Link

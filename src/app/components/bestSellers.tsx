@@ -23,6 +23,7 @@ export default function BestSells({ data }: { data: AllData[] | AllData | null }
     const theme = useTheme()
     return (
         <Container
+            component={"section"}
             maxWidth={false}
             sx={{
                 display: "flex",
@@ -34,11 +35,11 @@ export default function BestSells({ data }: { data: AllData[] | AllData | null }
             }}
         >
             <Box sx={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 10, paddingInline: 2 }}>
-                <Typography variant='h5' fontSize={{xs:20 , lg:25}} color={theme.palette.text.primary}>
+                <Typography variant='h5' fontSize={{ xs: 20, lg: 25 }} color={theme.palette.text.primary}>
                     OUR BEST SELLERS
                 </Typography>
                 <Link href={"/best-sellers"}>
-                    <Typography variant='body2' fontSize={{xs:16, lg:20}} sx={{
+                    <Typography variant='body2' fontSize={{ xs: 16, lg: 20 }} sx={{
                         color: "primary",
                         cursor: "pointer",
                         '&:hover': {
@@ -49,7 +50,7 @@ export default function BestSells({ data }: { data: AllData[] | AllData | null }
                     }}>view all <EastIcon /> </Typography>
                 </Link>
             </Box>
-            <Box sx={{ display: "flex", flexDirection: { xs: "row", lg: "row" } , gap:"1%" , flexWrap:"wrap" }}>
+            <Box sx={{ display: "flex", flexDirection: { xs: "row", lg: "row" }, gap: "1%", flexWrap: "wrap" }}>
 
                 {newData?.map((item, i) => (
                     <Box
@@ -60,7 +61,7 @@ export default function BestSells({ data }: { data: AllData[] | AllData | null }
                             alignItems: "center",
                             p: 2,
                             borderRadius: 2,
-                            width: {xs:"48%" , lg:"24%"},
+                            width: { xs: "48%", lg: "24%" },
                             position: "relative"
                         }}
                     >
@@ -70,7 +71,7 @@ export default function BestSells({ data }: { data: AllData[] | AllData | null }
                             style={{ flexDirection: "column" }}
                         >
                             <Image src={item.img[0]} alt={item.name} width={800} height={800} className='rounded-3xl' />
-                            <Typography variant='body2' fontSize={{xs:14 , lg:20}} sx={{
+                            <Typography variant='body2' fontSize={{ xs: 14, lg: 20 }} sx={{
                                 color: theme.palette.text.primary,
                                 '&:hover': {
                                     color: '#4287f5',

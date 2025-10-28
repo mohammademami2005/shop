@@ -27,7 +27,7 @@ export default function Product({ data }: { data: AllData }) {
     }, [items, productId])
 
     return (
-        <Container maxWidth={false} disableGutters sx={{ width: "100%", marginBlock: 5 }}>
+        <Container component={"section"} maxWidth={false} disableGutters sx={{ width: "100%", marginBlock: 5 }}>
             <Stack direction={{ xs: "column", lg: "row" }} >
                 <Box display={'flex'} flexDirection={{ xs: "column", md: "row" }} width={{ xs: "100%", md: "60%" }}>
                     <Image src={data.img[change]} width={800} height={800} alt={data.name} className='object-cover  h-[40vh] lg:h-[90vh]' />
