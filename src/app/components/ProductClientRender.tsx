@@ -17,7 +17,7 @@ export default function ProductClientRender({ data }: { data: AllData[] | AllDat
                     <Box key={i} position={"relative"} width={{ xs: 180, lg: 300 }} >
                         <Link  href={item.category + "/" + item.id + item.name}  >
 
-                            <Box className='productImgChange' margin={"auto"} borderRadius={5} position={"relative"} overflow={'hidden'} bgcolor={"green"}>
+                            <Box className='productImgChange' margin={"auto"} borderRadius={5} position={"relative"} overflow={'hidden'} >
                                 <Image src={item.img[0]} alt={item.name} width={500} height={500} />
                                 <Image src={item.img[1]} alt={item.name} width={500} height={500} className="absolute top-0 left-0 " />
                             </Box>
