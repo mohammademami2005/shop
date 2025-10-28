@@ -98,7 +98,7 @@ const Error = () => {
         />
         <CardContent>
           <Typography variant="h5" component="div">
-            'bio original'
+            bio original
           </Typography>
           <Typography variant="subtitle1" fontWeight={900} sx={{ color: 'text.secondary' }}>
             $119.00
