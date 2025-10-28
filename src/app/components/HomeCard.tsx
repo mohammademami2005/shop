@@ -6,9 +6,9 @@ import React, { useEffect, useState } from 'react'
 import { useCartStore } from "../store/store";
 
 export default function HomeCard() {
-  const [randomNum ,setRandomNum] = useState(()=>Math.floor(Math.random() * (12 - 1+1)))
+  const [randomNum, setRandomNum] = useState(() => Math.floor(Math.random() * (12 - 1 + 1)))
   const theme = useTheme()
-  const {addItem}=useCartStore()
+  const { addItem } = useCartStore()
 
 
 
@@ -20,18 +20,18 @@ export default function HomeCard() {
       )
       return res.data
     },
-    placeholderData: { img: "HomeCard1.avif", name: "" , description:"" , price:199},
+    placeholderData: { img: "HomeCard1.avif", name: "", description: "", price: 199 },
     staleTime: 30000, // داده کش‌شده 1 دقیقه معتبره
     gcTime: 30000
   })
 
 
   console.log(data)
- const productId = String(data.id)
+  const productId = String(data?.id)
   return (
-    <Card sx={{ maxWidth: 450 , padding:3, borderRadius:8 , display:{sx:"none" , lg:"flex"} , flexDirection:"column" }}>
+    <Card sx={{ maxWidth:450, padding: 3, borderRadius: 8, display: { sx: "none", lg: "flex" }, flexDirection: "column" }}>
       <CardMedia
-        sx={{ height: 250 , borderRadius:3 , width:"100%"}}
+        sx={{ height: { xs: 250, lg: 250 }, borderRadius: 3, width: "100%" }}
         image={data?.img}
         title="green iguana"
       />
@@ -39,15 +39,21 @@ export default function HomeCard() {
         <Typography gutterBottom variant="h5" component="div">
           {data?.name}
         </Typography>
-        <Typography variant="subtitle1" sx={{ color: 'text.secondary' }}>
+        <Typography variant="subtitle1" fontWeight={900} sx={{ color: 'text.secondary' }}>
           ${data?.price}.00
         </Typography>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+        <Typography variant="body2" fontSize={{ xs: 12, lg: 16 }} sx={{
+          display: '-webkit-box',
+          WebkitLineClamp: 2, // فقط دو خط نشون بده
+          WebkitBoxOrient: 'vertical',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+        }}>
           {data?.description}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button variant="myCustom" sx={{color:theme.palette.text.primary,width:250}} onClick={()=> addItem({ id: productId, name: data.name, price: data.price, quantity: 1, category: data.category, description: data.description, img: data.img, bestSells: data.bestSells ,total:0 })}>add to cart</Button>
+        <Button variant="myCustom" sx={{ color: theme.palette.text.primary, width: 250 }} onClick={() => addItem({ id: productId, name: data.name, price: data.price, quantity: 1, category: data.category, description: data.description, img: data.img, bestSells: data.bestSells, total: 0 })}>add to cart</Button>
       </CardActions>
     </Card>
   )

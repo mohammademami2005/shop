@@ -15,7 +15,7 @@ export default async function Page() {
 
   return (
     <Container maxWidth={false} disableGutters sx={{ marginTop: 4 }} >
-      <Box sx={{ paddingLeft: 3, width: "30%" }}>
+      <Box sx={{ paddingLeft: 3,width:{xs:"100%" , lg:"30%"}}}>
         <Breadcrumbs aria-label="breadcrumb">
           <Link color="inherit" href="/">
             Home
@@ -24,7 +24,7 @@ export default async function Page() {
         </Breadcrumbs>
 
       </Box>
-      <Box display={"flex"} alignItems={"center"} justifyContent={"center"} width={"100%"} height={"100%"} paddingLeft={{ xs: 10, lg: 0 }}>
+      <Box display={"flex"} alignItems={"center"} justifyContent={"center"} width={"100%"} height={"100%"} >
 
         <ProductClientRender data={newData} />
       </Box>

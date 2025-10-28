@@ -8,16 +8,16 @@ export default function Loading() {
             <Box display={'flex'} paddingLeft={2} gap={5} marginTop={5}>
                 <Stack direction={'column'} useFlexGap width={"20%"} position={"relative"} >
                     <Stack gap={2} direction={"column"} width={"100%"} className="sticky top-0 left-0 " >
-                        <Skeleton variant='text' width={270} height={60}></Skeleton>
+                        <Skeleton variant='text' sx={{xs:100 , lg:270}} height={60}></Skeleton>
                         <Divider />
                         <Stack direction={"column"} alignItems={"start"}>
-                            <Skeleton variant='text' width={250} height={50} ></Skeleton>
-                            <Skeleton variant='text' width={250} height={50} ></Skeleton>
-                            <Skeleton variant='text' width={250} height={50} ></Skeleton>
-                            <Skeleton variant='text' width={250} height={50} ></Skeleton>
-                            <Skeleton variant='text' width={250} height={50} ></Skeleton>
+                            <Skeleton variant='text' sx={{width:{xs:100 , lg:250} , height:{xs:25 , lg:50}}} ></Skeleton>
+                            <Skeleton variant='text' sx={{width:{xs:100 , lg:250} , height:{xs:25 , lg:50}}}  ></Skeleton>
+                            <Skeleton variant='text' sx={{width:{xs:100 , lg:250} , height:{xs:25 , lg:50}}}  ></Skeleton>
+                            <Skeleton variant='text' sx={{width:{xs:100 , lg:250} , height:{xs:25 , lg:50}}}  ></Skeleton>
+                            <Skeleton variant='text' sx={{width:{xs:100 , lg:250} , height:{xs:25 , lg:50}}}  ></Skeleton>
                         </Stack>
-                        <Skeleton variant='text' width={270} height={60}></Skeleton>
+                        <Skeleton variant='text' sx={{xs:100 , lg:270}} height={60}></Skeleton>
                         <Divider />
                         <Slider
                             sx={{ width: "80%", margin: "auto" }}
@@ -26,8 +26,8 @@ export default function Loading() {
                             valueLabelDisplay="auto"
                         />
                         <Stack direction={"row"} justifyContent={"space-between"} >
-                            <Skeleton variant="text" width={60} height={50} />
-                            <Skeleton variant="text" width={60} height={50} />
+                            <Skeleton variant="text" sx={{width:{xs:30 , lg:60} , height:{xs:30 , lg:50}}} />
+                            <Skeleton variant="text" sx={{width:{xs:30 , lg:60} , height:{xs:30 , lg:50}}} />
                         </Stack>
                         <Divider />
                     </Stack>
@@ -62,9 +62,8 @@ export default function Loading() {
                                 {/* Image skeleton */}
                                 <Skeleton
                                     variant="rounded"
-                                    width={300}
-                                    height={300}
-                                    sx={{ borderRadius: 5 }}
+                                    
+                                    sx={{ borderRadius: 5,width:{xs:200 , lg:300} , height:{xs:200 , lg:300} }}
                                 />
 
                                 {/* Text skeletons */}

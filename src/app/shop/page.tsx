@@ -2,7 +2,6 @@ import React from 'react'
 import { getData } from '../page'
 import { Box, Breadcrumbs, Container, Typography } from '@mui/material'
 import Link from 'next/link'
-import ProductClientRender from '../components/ProductClientRender'
 import Filtering from '../components/filltering'
 import Error1 from './error'
 
@@ -20,11 +19,8 @@ export default async function Page() {
           </Link>
           <Typography sx={{ color: 'text.primary', fontSize: 20 }}>shop</Typography>
         </Breadcrumbs>
-        
       </Box>
-
           <Filtering data={myData} />
-      
     </Container>
   )
 }

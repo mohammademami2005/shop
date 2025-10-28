@@ -19,36 +19,32 @@
   }
 }
 
+
 @font-face {
-  font-family: 'Madefor';
-  src: url("../../public/fonts/WixMadeforText-Regular.ttf") format('woff2');
+  font-family: 'arvo';
+  src: url("../../public/fonts/Arvo/Arvo-Regular.ttf") format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: 'Madefor', sans-serif;
-}
-
-.productImgChange{
-  >img{
+.productImgChange {
+  >img {
     transition: 1s;
-    &:last-child{
+
+    &:last-child {
       opacity: 0;
     }
   }
 
-  &:hover{
-    >img{
-      &:last-child{
+  &:hover {
+    >img {
+      &:last-child {
         opacity: 1;
       }
-      &:first-child{
+
+      &:first-child {
         opacity: 0;
       }
     }

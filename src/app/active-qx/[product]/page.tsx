@@ -15,8 +15,8 @@ export default async function Page({ params }: { params: { product: string } }) 
   // if(dataError)return <Loading />
   
   return (
-    <section>
-      <Box sx={{ paddingInline:3 }}>
+
+      <Box sx={{ paddingInline:3 }} component={"section"}>
         <Breadcrumbs aria-label="breadcrumb" sx={{marginTop:3}}>
           <Link
             color="inherit" href="/">
@@ -31,6 +31,6 @@ export default async function Page({ params }: { params: { product: string } }) 
           <Product key={i} data={item} />
         ))}
       </Box>
-    </section>
+
   )
 }

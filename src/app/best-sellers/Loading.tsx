@@ -12,7 +12,7 @@ export default function Loading() {
                 padding: 2,
                 alignItems: "center",
                 paddingLeft: { xs: 0, lg: 10 },
-                justifyContent: "start",
+                justifyContent: "center",
             }}
             width={"100%"}
             height={"100%"}
@@ -22,19 +22,20 @@ export default function Loading() {
                     key={i}
                     sx={{
                         display: "flex",
-                        flexDirection: "column",
+                        flexDirection: "row",
+                        flexWrap:"wrap",
                         alignItems: "start",
-                        width: { xs: "100%", sm: "45%", md: "30%" },
+                        width: { xs: "40%", sm: "45%", md: "30%" },
                         position: "relative",
                         gap: 2,
+                        // bgcolor:"red"
                     }}
                 >
                     {/* Image skeleton */}
                     <Skeleton
                         variant="rounded"
-                        width={300}
-                        height={300}
-                        sx={{ borderRadius: 5 }}
+
+                        sx={{ borderRadius: 5  , width:{xs:150 , lg:300} , height:{xs:150 , lg:300}}}
                     />
 
                     {/* Text skeletons */}
@@ -46,7 +47,7 @@ export default function Loading() {
                         alignItems={"start"}
                         paddingLeft={2}
                     >
-                        <Skeleton variant="text" width={200} height={40} />
+                        <Skeleton variant="text" sx={{width:{xs:100 ,lg:200}}} />
                         <Skeleton variant="text" width={80} height={40} />
                     </Box>
 
