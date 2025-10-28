@@ -88,7 +88,7 @@ export default async function Home() {
           <Typography variant="h3" fontSize={{xs:20 , lg:27}} pl={4} py={5} sx={{lineHeight:1.5}}>FIND OUT WHAT PEOPLE ARE SAYIG ABOUT QUENX</Typography>
           <Stack direction={{xs:"column" , lg:"row"}} justifyContent={"space-evenly"} gap={{xs:4 , lg:0}} paddingInline={{xs:3 , lg:0}}>
             <Stack direction={"column"} padding={5} bgcolor={"gray"} width={{xs:"100%" , lg:"28%"}} borderRadius={4} gap={2}>
-              <Typography variant="h3" fontSize={{xs:20 , lg:25}} >"Eco-Friendly and Stylish"</Typography>
+              <Typography variant="h3" fontSize={{xs:20 , lg:25}} >&quot;Eco-Friendly and Stylish&quot;</Typography>
               <Typography variant="body1" fontSize={{xs:13}}>Use this space to share a testimonial quote about the business, its products or its services. Include a quote from an actual customer to build trust and attract site visitors.</Typography>
               <Box display={"flex"} justifyContent={"start"} gap={5} alignItems={"center"}>
                 <Image src={"/avatar1.png"} alt='' width={100} height={100} style={{borderRadius:"50%"}} />
@@ -96,7 +96,7 @@ export default async function Home() {
               </Box>
             </Stack>
             <Stack direction={"column"} padding={5} bgcolor={"gray"} width={{xs:"100%" , lg:"28%"}} borderRadius={4} gap={2}>
-              <Typography variant="h3" fontSize={{xs:20 , lg:25}} >"Ideal for Active Lifestyles"</Typography>
+              <Typography variant="h3" fontSize={{xs:20 , lg:25}} >&quot;Ideal for Active Lifestyles&quot;</Typography>
               <Typography variant="body1" fontSize={{xs:13}}>Use this space to share a testimonial quote about the business, its products or its services. Include a quote from an actual customer to build trust and attract site visitors.</Typography>
               <Box display={"flex"} justifyContent={"start"} gap={5} alignItems={"center"}>
                 <Image src={"/avatar2.png"} alt='' width={100} height={100} style={{borderRadius:"50%"}} />
@@ -104,7 +104,7 @@ export default async function Home() {
               </Box>
             </Stack>
             <Stack direction={"column"} padding={5} bgcolor={"gray"} width={{xs:"100%" , lg:"28%"}} borderRadius={4} gap={2}>
-              <Typography variant="h3" fontSize={{xs:20 , lg:25}} >"My New Daily Essential"</Typography>
+              <Typography variant="h3" fontSize={{xs:20 , lg:25}} >&quot;My New Daily Essential&quot;</Typography>
               <Typography variant="body1" fontSize={{xs:13}}>Use this space to share a testimonial quote about the business, its products or its services. Include a quote from an actual customer to build trust and attract site visitors.</Typography>
               <Box display={"flex"} justifyContent={"start"} gap={5} alignItems={"center"}>
                 <Image src={"/avatar3.png"} alt='' width={100} height={100} style={{borderRadius:"50%"}} />
