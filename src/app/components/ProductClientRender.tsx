@@ -11,10 +11,10 @@ export default function ProductClientRender({ data }: { data: AllData[] | AllDat
     // console.log(items)
     const dataArray = Array.isArray(data) ? data : data ? [data] : [];
     return (
-        <Stack spacing={{xs:3 , lg:5}} useFlexGap direction={"row"} sx={{ flexWrap: "wrap", padding: 2, alignItems: "center", paddingLeft: { xs: 0, lg: 10 }, justifyContent: {xs:"center" , lg:"start"} }} gap={{xs:2 ,lg:5}} width={"100%"} height={"100%"} >
+        <Stack spacing={{xs:3 , lg:5}} useFlexGap direction={"row"} sx={{ flexWrap: "wrap", padding: 2, alignItems: "center", paddingLeft: { xs: 0, lg: 10 }, justifyContent: {xs:"center" , lg:"start"} }} gap={{xs:5 ,lg:5}} width={"100%"} height={"100%"} >
             {
                 dataArray?.map((item, i) => (
-                    <Box key={i} position={"relative"} width={{ xs: 180, lg: 300 }} >
+                    <Box key={i} position={"relative"} width={{ xs: 150, lg: 300 }} >
                         <Link  href={item.category + "/" + item.id + item.name}  >
 
                             <Box className='productImgChange' margin={"auto"} borderRadius={5} position={"relative"} overflow={'hidden'} >
@@ -29,7 +29,7 @@ export default function ProductClientRender({ data }: { data: AllData[] | AllDat
                                     ${item.price}.00
                                 </Typography>
                             </Box>
-                            {item.bestSells ? <Typography variant="body2" fontSize={{xs:10 ,lg:25}} color="black" padding={1} borderRadius={2} position={"absolute"} className="absolute top-3 left-3 bg-blue-300">best seller</Typography> : null}
+                            {item.bestSells ? <Typography variant="body2" fontSize={{xs:10 ,lg:14}} color="black" padding={1} borderRadius={2} position={"absolute"} className="absolute top-3 left-3 bg-blue-300">best seller</Typography> : null}
                         </Link>
                     </Box>
                 ))
