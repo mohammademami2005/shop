@@ -110,7 +110,7 @@ const Error = () => {
             overflow: 'hidden',
             textOverflow: 'ellipsis',
           }}>
-            "The Bio Original blends comfort with performance for everyday runners. Designed with breathable mesh and lightweight cushioning. A timeless look that never goes out of style."
+            The Bio Original blends comfort with performance for everyday runners. Designed with breathable mesh and lightweight cushioning. A timeless look that never goes out of style.
           </Typography>
         </CardContent>
         <CardActions>
