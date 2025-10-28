@@ -59,7 +59,7 @@ export default async function Home() {
             <Typography variant="h1" fontSize={{ xs: 32, lg: 60 }} fontWeight={900} marginBottom={2}>WALKING WITH PURPOSE.</Typography>
             <Typography variant="body1" fontSize={{ xs: 20 }}>Premium Vegan Sneakers </Typography>
           </Box>
-          <Box sx={{ width: { xs: "100%", lg: "50%" }, height: "100%", display: "flex", justifyContent: "center", alignItems: "center", margin: { xs: "auto", lg: 0 } }}>
+          <Box sx={{ width: { xs: "100%", lg: "100%" }, height: "100%", display: "flex", justifyContent: "center", alignItems: "center", margin: { xs: "auto", lg: 0 } }}>
             <HomeCard />
           </Box>
         </Box>
