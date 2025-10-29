@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import {
     AppBar,
     Toolbar,
@@ -15,6 +15,9 @@ import {
     Drawer,
     Divider,
     Avatar,
+    Snackbar,
+    Alert,
+    useTheme,
 } from "@mui/material";
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import MenuIcon from "@mui/icons-material/Menu";
@@ -32,20 +35,20 @@ import Search from "./search";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { usePathname } from "next/navigation";
 
+
 export default function HeaderClient() {
     const { mode, toggleTheme } = useThemeStore();
     const { items } = useCartStore()
-
+    const theme = useTheme()
     const path = usePathname()
 
     const [open, setOpen] = useState(false)
-    // const toggleDrawer = (newOpen: boolean) => { setOpen(newOpen) }
     const navLinks = ["shop", 'best-sellers', 'active-qx', 'artisanal', 'kids', 'About']
     const [myData, setMyData] = useState<AllData[] | AllData | null>([])
-
+    const [alert, setAlert] = useState<boolean>(false)
 
     const toggleDrawer = React.useCallback((newOpen: boolean) => setOpen(newOpen), [])
-
+    const handleClose = useCallback(()=> setAlert(false),[])
     useEffect(() => {
         toggleDrawer(false)
     }, [path])
@@ -65,7 +68,7 @@ export default function HeaderClient() {
                     </IconButton>
                 </Link>
 
-                <IconButton color="inherit" sx={{ display: { xs: "none", lg: "flex" } }}>
+                <IconButton color="inherit" sx={{ display: { xs: "none", lg: "flex" } }} onClick={()=> setAlert(true)}>
                     <AccountCircleRoundedIcon />
                 </IconButton>
 
@@ -100,7 +103,7 @@ export default function HeaderClient() {
                                 justifyContent: 'space-between',
                             }}
                         >
-                            <IconButton size="large"  >
+                            <IconButton size="large" onClick={() => setAlert(true)}>
                                 <AccountCircleRoundedIcon sx={{ fontSize: 50 }} />
                             </IconButton>
 
@@ -128,6 +131,21 @@ export default function HeaderClient() {
                         </Link>
                     </Box>
                 </Drawer>
+                <Snackbar
+                    open={alert}
+                    autoHideDuration={1500}
+                    onClose={handleClose}
+                    anchorOrigin={{ vertical: "top", horizontal: "center" }}
+                >
+                    <Alert
+                        onClose={handleClose}
+                        severity="info"
+                        sx={{ width:{xs:"80%",lg:"100%"} , bgcolor:theme.palette.background.default , color:theme.palette.text.primary}}
+                        variant="standard"
+                    >
+                        Profile feature coming soon 🚀
+                    </Alert>
+                </Snackbar>
             </Box>
         </>
 
