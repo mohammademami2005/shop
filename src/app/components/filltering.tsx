@@ -1,6 +1,5 @@
 'use client'
 import React, { useEffect, useMemo, useState } from 'react'
-import { AllData } from '../page'
 import {
   Box,
   Button,
@@ -17,6 +16,7 @@ import {
 import ProductClientRender from './ProductClientRender'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import TuneIcon from '@mui/icons-material/Tune'
+import { AllData } from '../api/getData'
 
 interface FilterState {
   type: 'all' | 'bestSells' | 'category'

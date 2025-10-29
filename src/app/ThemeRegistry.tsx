@@ -1,6 +1,5 @@
 'use client'
-
-import * as React from "react";
+import  React, { useEffect, useState } from "react";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
@@ -12,18 +11,15 @@ const muiCache = createCache({ key: "mui", prepend: true });
 
 export default function ThemeRegistry({ children }: { children: React.ReactNode }) {
   const { mode } = useThemeStore();
-  const [hydrated, setHydrated] = React.useState(false);
+  const [hydrated, setHydrated] = useState(false);
 
-  // وقتی Zustand داده رو از localStorage خونده، hydrated میشه true
-  React.useEffect(() => {
+  useEffect(() => {
     setHydrated(true);
   }, []);
 
-  // تا زمانی که Zustand هنوز مقدار localStorage رو لود نکرده، چیزی رندر نکن
   if (!hydrated) {
     return null;
   }
-
   const theme = mode === "light" ? lightTheme : darkTheme;
 
   return (

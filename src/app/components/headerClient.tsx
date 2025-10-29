@@ -21,19 +21,15 @@ import {
 } from "@mui/material";
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import { useCartStore, useThemeStore } from "../store/store";
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import Link from "next/link";
-import { useQueries, useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import { AllData } from "../page";
 import Search from "./search";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { usePathname } from "next/navigation";
+// import { AllData } from "../api/getData";
 
 
 export default function HeaderClient() {
@@ -44,7 +40,7 @@ export default function HeaderClient() {
 
     const [open, setOpen] = useState(false)
     const navLinks = ["shop", 'best-sellers', 'active-qx', 'artisanal', 'kids', 'About']
-    const [myData, setMyData] = useState<AllData[] | AllData | null>([])
+    // const [myData, setMyData] = useState<AllData[] | AllData | null>([])
     const [alert, setAlert] = useState<boolean>(false)
 
     const toggleDrawer = React.useCallback((newOpen: boolean) => setOpen(newOpen), [])

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Box, Button, Container, Skeleton, Stack, Typography } from "@mui/material";
 
-
 export default function Loading() {
   return (
     <Container maxWidth={false} disableGutters sx={{ width: "100%", marginTop: 5 }}>

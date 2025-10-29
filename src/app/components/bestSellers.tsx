@@ -1,10 +1,10 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import { AllData } from '../page'
 import { Box, Container, Typography, useTheme } from '@mui/material'
 import Link from 'next/link'
 import Image from 'next/image'
 import EastIcon from '@mui/icons-material/East';
+import { AllData } from '../api/getData'
 
 
 

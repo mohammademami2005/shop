@@ -1,13 +1,13 @@
+import { getData } from '@/app/api/getData'
 import Product from '@/app/components/Product'
-import { getData } from '@/app/page'
 import { Box, Breadcrumbs,Typography } from '@mui/material'
 import Link from 'next/link'
 import React from 'react'
 
 
 export default async function Page({ params }: { params: { product: string } }) {
-  const p = params
-  const id = parseInt( p.product)
+  const { product } = await params  
+  const id = parseInt(product)
   const { data } = await getData("https://68fa4adfef8b2e621e7f86c5.mockapi.io/shopify/products/" + id)
   const newData = Array.isArray(data) ? data : data ? [data] : []
  

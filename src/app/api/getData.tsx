@@ -1,70 +1,38 @@
-export interface ProductResponse {
-    products: Product[];
-    total: number;
-    skip: number;
-    limit: number;
-}
-export interface Product {
-    id: number;
-    title: string;
-    description: string;
-    category: string;
-    price: number;
-    discountPercentage: number;
-    rating: number;
-    stock: number;
-    tags: string[];
-    brand: string;
-    sku: string;
-    weight: number;
-    dimensions: Dimensions;
-    warrantyInformation: string;
-    shippingInformation: string;
-    availabilityStatus: string;
-    reviews: Review[];
-    returnPolicy: string;
-    minimumOrderQuantity: number;
-    meta: Meta;
-    images: string[];
-    thumbnail: string;
-    slug?:string,
+
+export interface Categories {
+  name: string,
+  img: string
+  id: number
 }
 
-interface Dimensions {
-    width: number;
-    height: number;
-    depth: number;
-}
-
-interface Review {
-    rating: number;
-    comment: string;
-    date: string; // ISO date string
-    reviewerName: string;
-    reviewerEmail: string;
-}
-interface Meta {
-    createdAt: string; // ISO date string
-    updatedAt: string; // ISO date string
-    barcode: string;
-    qrCode: string;
-}
-
-export default async function FechData(
-  url: string
-): Promise<{ data: ProductResponse | null; error: Error | null }> {
+export async function getCategory(): Promise<{ category: Categories[] | null, error: null | unknown }> {
   try {
-    const res = await fetch(url);
+    const res = await fetch("https://68fa4adfef8b2e621e7f86c5.mockapi.io/shopify/category-list")
+    if (!res.ok) throw new Error("filed to fetch" + res.status)
+    const category: Categories[] = await res.json()
+    return { category, error: null }
+  } catch (err) {
+    return { category: null, error: err }
+  }
+}
 
-    if (!res.ok) throw new Error(`Failed to fetch data: ${res.status}`);
+export interface AllData {
+  name: string
+  price: number
+  img: string[]
+  bestSells: boolean
+  category: string
+  description: string
+  id: number
+}
 
-    const data: ProductResponse = await res.json();
-    return { data, error: null };
-  } catch (err: unknown) {
-    if (err instanceof Error) {
-      return { data: null, error: err };
-    } else {
-      return { data: null, error: new Error("An unknown error occurred") };
-    }
+export async function getData(url: string): Promise<{ data: AllData[] | AllData | null, dataError: null | unknown }> {
+  try {
+    const res = await fetch(url)
+    if (!res.ok) throw new Error("filed to fetch")
+    const data: AllData[] = await res.json()
+    return { data, dataError: null }
+  } catch (err) {
+    return { data: null, dataError: err }
   }
 }

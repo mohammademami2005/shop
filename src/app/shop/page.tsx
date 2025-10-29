@@ -1,8 +1,8 @@
 import React from 'react'
-import { getData } from '../page'
 import { Box, Breadcrumbs, Container, Typography } from '@mui/material'
 import Link from 'next/link'
 import Filtering from '../components/filltering'
+import { getData } from '../api/getData'
 
 
 export default async function Page() {

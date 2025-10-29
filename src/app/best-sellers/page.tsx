@@ -2,7 +2,8 @@ import { Box, Breadcrumbs, Container, Typography } from '@mui/material'
 import Link from 'next/link'
 import React from 'react'
 import ProductClientRender from '../components/ProductClientRender'
-import { getData } from '../page'
+import { getData } from '../api/getData'
+
 
 
 export default async function Page() {

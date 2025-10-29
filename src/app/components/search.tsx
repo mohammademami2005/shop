@@ -1,10 +1,8 @@
 "use"
 import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import { AllData } from '../page';
 import ProductClientRender from './ProductClientRender';
 import { IconButton, InputBase, Paper, Stack } from '@mui/material';
 import SearchIcon from "@mui/icons-material/Search";
@@ -12,6 +10,7 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { usePathname } from 'next/navigation';
 import CloseIcon from '@mui/icons-material/Close';
+import { AllData } from '../api/getData';
 
 
 const style = {

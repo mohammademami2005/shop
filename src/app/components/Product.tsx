@@ -2,8 +2,8 @@
 import { Box, Button, Container, Stack, Typography, useTheme } from '@mui/material'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
-import { AllData } from '../page'
 import { useCartStore } from '../store/store'
+import { AllData } from '../api/getData'
 
 export default function Product({ data }: { data: AllData }) {
     const [change, setChange] = useState(0)

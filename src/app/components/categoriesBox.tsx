@@ -9,9 +9,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import React from 'react'
 import Link from 'next/link';
-import { Categories } from '../page';
 import Image from 'next/image';
 import EastIcon from '@mui/icons-material/East';
+import { Categories } from '../api/getData';
 
 interface CategoriesBoxProps {
     data: Categories[] | null;

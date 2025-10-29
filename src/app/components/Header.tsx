@@ -3,7 +3,8 @@ import React from 'react'
 import Image from 'next/image';
 import HeaderClient from './headerClient';
 import Link from 'next/link';
-import { getCategory } from '../page';
+import { getCategory } from '../api/getData';
+
 
 export default async function Header() {
   const {category , error} = await getCategory()
