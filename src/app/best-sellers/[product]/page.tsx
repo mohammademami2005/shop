@@ -8,10 +8,9 @@ import React from 'react'
 export default async function Page({ params }: { params: { product: string } }) {
   const p = params
   const id = parseInt( p.product)
-  const { data, dataError } = await getData("https://68fa4adfef8b2e621e7f86c5.mockapi.io/shopify/products/" + id)
+  const { data } = await getData("https://68fa4adfef8b2e621e7f86c5.mockapi.io/shopify/products/" + id)
   const newData = Array.isArray(data) ? data : data ? [data] : []
-
-  
+ 
   return (
     <Box component={"main"}>
       <Box component={'nav'} sx={{ paddingInline:3 }}>

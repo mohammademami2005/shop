@@ -11,7 +11,7 @@ export default async function Page() {
   const myData = Array.isArray(data) ? data : data ? [data] : []
   const newData = myData.filter(item => item.category === "active-qx")
 
-  // if(dataError) return <Loading />
+  if(dataError) throw dataError
 
   return (
     <Container component={"main"} maxWidth={false} disableGutters sx={{ marginTop: 4 }} >

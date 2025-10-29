@@ -11,6 +11,7 @@ export default async function Page({ params }: { params: { product: string } }) 
   const { data, dataError } = await getData("https://68fa4adfef8b2e621e7f86c5.mockapi.io/shopify/products/" + id)
   const newData = Array.isArray(data) ? data : data ? [data] : []
 
+  if(dataError) throw dataError
   
   return (
     <Box component={"main"}>

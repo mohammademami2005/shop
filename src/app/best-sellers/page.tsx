@@ -9,6 +9,7 @@ export default async function Page() {
   const { data, dataError } = await getData("https://68fa4adfef8b2e621e7f86c5.mockapi.io/shopify/products")
   const myData = Array.isArray(data) ? data : data ? [data] : []
   const newData = myData && myData.filter(item => item.bestSells === true)
+  if(dataError) throw dataError
   return (
     <Container component={'main'} maxWidth={false} disableGutters sx={{ marginTop: 4 }} >
       <Box component={"nav"} sx={{ paddingLeft: 3, width:{xs:"100%" , lg:"30%"} }}>

@@ -3,12 +3,12 @@ import { getData } from '../page'
 import { Box, Breadcrumbs, Container, Typography } from '@mui/material'
 import Link from 'next/link'
 import Filtering from '../components/filltering'
-import Error1 from './error'
+
 
 export default async function Page() {
   const { data, dataError } = await getData("https://68fa4adfef8b2e621e7f86c5.mockapi.io/shopify/products")
    const  myData = Array.isArray(data) ? data : data? [data] : []
-   if(dataError) return <Error1 />
+   if(dataError) throw data
 
   return (
     <Container component={"main"} maxWidth={false} disableGutters sx={{ marginTop: 4 , width:"100%" }} >

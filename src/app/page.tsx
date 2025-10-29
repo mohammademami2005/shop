@@ -5,6 +5,8 @@ import BestSells from "./components/bestSellers";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "./components/Footer";
+import Error1 from "./error";
+import { JSX } from "react";
 
 
 export interface Categories {
@@ -16,7 +18,7 @@ export interface Categories {
 export async function getCategory(): Promise<{ category: Categories[] | null, error: null | unknown }> {
   try {
     const res = await fetch("https://68fa4adfef8b2e621e7f86c5.mockapi.io/shopify/category-list")
-    if (!res.ok) throw new Error("filed to fetch")
+    if (!res.ok) throw new Error("filed to fetch" + res.status)
     const category: Categories[] = await res.json()
     return { category, error: null }
   } catch (err) {
@@ -45,11 +47,14 @@ export async function getData(url: string): Promise<{ data: AllData[] | AllData 
   }
 }
 
-export default async function Home() {
+export default async function Home(): Promise<JSX.Element> {
   // const { data , error} = await FechData("https://dummyjson.com/products/category-list")
   const { category, error } = await getCategory()
   const { data, dataError } = await getData("https://68fa4adfef8b2e621e7f86c5.mockapi.io/shopify/products")
-  console.log(category)
+  
+  if(error ) throw error
+  if(dataError) throw dataError
+  
   return (
     <>
       <Container component={'section'} maxWidth={false} disableGutters sx={{ marginTop: 5 }} >
