@@ -12,12 +12,12 @@ export default async function Page() {
 
   return (
     <Container component={"main"} maxWidth={false} disableGutters sx={{ marginTop: 4 , width:"100%" }} >
-      <Box component={"nav"} sx={{ paddingLeft:3 , width:"30%"}}>
+      <Box component={"nav"} sx={{ paddingLeft:3 ,  width:{xs:"100%" , lg:"30%"}}}>
         <Breadcrumbs aria-label="breadcrumb">
           <Link color="inherit" href="/">
             Home
           </Link>
-          <Typography sx={{ color: 'text.primary', fontSize: 20 }}>shop</Typography>
+          <Typography sx={{ color: 'text.primary', fontSize: 17 }}>shop</Typography>
         </Breadcrumbs>
       </Box>
           <Filtering data={myData} />

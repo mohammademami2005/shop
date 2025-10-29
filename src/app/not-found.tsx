@@ -9,7 +9,7 @@ export default function NotFound() {
     return (
         <Box
             sx={{
-                backgroundImage: 'url(/not-found.png)',
+                backgroundImage: 'url(/not-found2.avif)',
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundPosition: 'center',

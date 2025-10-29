@@ -107,8 +107,8 @@ export default function HeaderClient() {
                                 <AccountCircleRoundedIcon sx={{ fontSize: 50 }} />
                             </IconButton>
 
-                            <IconButton onClick={() => toggleDrawer(false)}>
-                                <CloseRoundedIcon />
+                            <IconButton onClick={() => toggleDrawer(false)} sx={{width:70 , height:70}}>
+                                <CloseRoundedIcon  />
                             </IconButton>
                         </Box>
                         <Divider sx={{ my: 3 }} />
