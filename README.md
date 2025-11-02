@@ -1,36 +1,190 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# پروژه‌ی Next.js + TypeScript + MUI
 
-## Getting Started
+این مخزن یک پروژه نمونه است که با **Next.js** و **TypeScript** ساخته شده و از کتابخانه‌های **MUI (Material UI)**، **react-query** و **zustand** استفاده می‌کند. پروژه برای SEO بهینه شده و ترکیبی از **SSR** و **CSR** را پوشش می‌دهد. دیتابیس به‌صورت محلی با یک **mock API** شبیه‌سازی شده است.
 
-First, run the development server:
+---
+
+## 🎯 دمو (Live Demo)
+
+🔗 [مشاهده آنلاین پروژه](https://shop.mohammademamiproject.ir/)
+
+---
+
+## ویژگی‌ها (Features)
+
+- دسته‌بندی‌ها (Categories)
+- جستجو (Search)
+- فیلترینگ بر اساس **قیمت** و **دسته‌بندی**
+- URLها و صفحات با **slug** خوانا
+- تم روشن و تیره (Light / Dark theme)
+- سبد خرید پیاده‌سازی شده با **zustand** و **persist** در Local Storage
+- استفاده از **react-query** برای مدیریت کش و درخواست‌های سرور
+- SEO مناسب (meta tags، Open Graph، ساختار منطقی صفحات)
+- ترکیب **SSR** (برای صفحات مهم/SEO) و **CSR** (برای تعاملات سمت کاربر)
+
+---
+
+## ساختار کلی پروژه
+
+### 🧭 ساختار فولدرها (Project Structure)
+
+![Home](/public/screenshots/homeLight.png)
+![Home](/public/screenshots/homeBlack.png)
+![Home](/public/screenshots/homeLightMobile.png)
+![Home](/public/screenshots/homeBlackMobile.png)
+![Shop](/public/screenshots/shopBlack.png)
+![Cart](/public/screenshots/cart.png)
+
+> 📸 توجه: تصویر بالا را در مسیر `public/project-structure.png` قرار دهید.
+
+پروژه ساختاری ماژولار دارد که هر بخش (مثل theme، shop، store و providers) به‌صورت جداگانه مدیریت می‌شود تا نگهداری و توسعه ساده‌تر باشد.
+
+- **app/** → مسیر اصلی صفحات و layoutها در Next.js 13+ (App Router)
+- **providers/** → Providerهای اصلی مانند ThemeProvider و QueryClientProvider
+- **store/** → مدیریت state با Zustand
+- **theme/** → تم‌های روشن و تیره با MUI Theme System
+- **shop/** → صفحات و مسیرهای فروشگاه (cart, product, listing)
+- **components/** → اجزای UI عمومی
+- **mock-api/** → داده‌های آزمایشی
+- **public/** → فایل‌های استاتیک
+
+---
+
+## نصب و اجرای پروژه (Local)
+
+**نیازمندی‌ها**
+
+- Node.js (نسخه 16 یا جدیدتر)
+- npm یا yarn
+
+**گام‌ها**
+
+1. مخزن را کلون کنید:
+
+```bash
+git clone <URL-REPO>
+cd <project-folder>
+```
+
+2. وابستگی‌ها را نصب کنید:
+
+```bash
+npm install
+# یا
+# yarn
+```
+
+3. فایل محیطی (.env) را بسازید — مثال متغیرها در `.env.example` موجود است.
+
+4. سرور Mock API را اجرا کنید (اگر جداست) یا در همان پروژه با اسکریپت dev اجرا کنید:
+
+```bash
+npm run mock
+# یا
+npm run dev
+```
+
+5. پروژه را در حالت توسعه اجرا کنید:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# سپس باز کنید: http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**اسکریپت‌های مهم**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `dev` — اجرای اپ در حالت توسعه
+- `build` — ساخت برای پروداکشن
+- `start` — اجرای نسخه‌ی ساخته‌شده
+<!-- - `mock` — اجرای mock-api (درصورت جدا بودن) -->
+- `lint` — اجرای lint
+<!-- - `test` — اجرای تست‌ها (در صورت وجود) -->
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## پیکربندی Mock API و دیتابیس
 
-To learn more about Next.js, take a look at the following resources:
+- دیتابیس پروژه به‌صورت محلی و با JSONهای ساده در پوشه `mock-api/` ساخته شده است.
+- Endpoints اصلی (مثال):
+  - `GET /api/products` — لیست محصولات (پشتیبانی از query params برای فیلتر، جستجو و pagination)
+  - `GET /api/products/:slug` — جزئیات محصول
+  - `GET /api/categories` — دریافت دسته‌بندی‌ها
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> اگر دیتابیس واقعی یا سرویس دیگری متصل کردید، کافیست آدرس‌ها را در `services/api.ts` یا متغیرهای محیطی به‌روزرسانی کنید.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## معماری State
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- مدیریت وضعیت سبد خرید با **zustand** انجام شده است.
+- برای پایدارسازی سبد خرید از `zustand` + `middleware` استفاده شده تا داده‌ها در **localStorage** ذخیره شوند (persist).
+- واکشی داده‌ها و کش آن‌ها با **react-query** انجام می‌شود تا مزایای stale-while-revalidate و cache invalidation را داشته باشیم.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## SEO و SSR
+
+- صفحات مهم (صفحات دسته‌بندی، محصولات و صفحه‌‌ی اصلی) از تکنیک‌های SSR/SSG استفاده می‌کنند تا برای موتورهای جستجو بهینه باشند.
+- هر صفحه دارای تگ‌های متا (title, description) و Open Graph است.
+- ساختار Breadcrumb و استفاده از JSON-LD برای نمایش بهتر در نتایج جستجو (در صورت نیاز) قابل اضافه شدن است.
+
+---
+
+## تمینگ (Dark / Light)
+
+- تم پروژه با MUI ThemeProvider پیاده‌سازی شده است.
+- حالت تم در zustand یا Context ذخیره می‌شود و تنظیم انتخاب‌شده در localStorage حفظ می‌شود.
+- تمام کامپوننت‌ها از `useTheme()` یا hook اختصاصی برای هماهنگی با تم استفاده می‌کنند.
+
+---
+
+<!-- ## مدیریت جستجو و فیلترینگ
+
+- جستجو با debounce پیاده‌سازی شده تا از درخواست‌های پی‌در‌پی جلوگیری شود.
+- فیلتر قیمت و دسته‌بندی به صورت client-side و server-side قابل اعمال است (در query params ارسال می‌شود).
+- Pagination و infinite scroll (در صورت نیاز) با react-query مدیریت می‌شود.
+
+--- -->
+
+## نکات توسعه و گسترش
+
+- اگر می‌خواهید API واقعی وصل کنید، مسیرها و سرویس‌های fetch را تنها در `services/` تغییر دهید.
+- افزودن واحدهای تست برای storeها و هوک‌ها توصیه می‌شود.
+- برای بهبود SEO بیشتر می‌توان از AMP، sitemap.xml و robots.txt استفاده کرد.
+
+---
+
+## مشارکت (Contributing)
+
+- اگر مایل به همکاری هستید، یک Pull Request باز کنید.
+- قوانین کدنویسی:
+  - از ESLint و Prettier استفاده شود.
+  - کامیت‌ها با فرمت معنادار و کوتاه نوشته شوند.
+
+---
+
+## منابع و ابزارها
+
+- Next.js
+- TypeScript
+- MUI (Material UI)
+- react-query
+- zustand
+- localStorage (برای persist)
+
+---
+
+## 👨‍🏫 مدرس پروژه
+
+این پروژه تحت نظارت **Parsa Ghorbanian** توسعه داده شده است.
+
+---
+
+## تماس
+
+برای جزئیات بیشتر یا ارسال جزییات اضافه (مثل اسکرین‌شات‌ها، ساختار دقیق دیتابیس، مثال‌های query و env vars) همین‌جا بفرست تا README را دقیق‌تر کنم و هر بخش را کامل‌تر بنویسم.
+
+---
+
+<!-- *نسخه به‌روزشده README — مسیر سفارشی تصویر ساختار پروژه برای public تنظیم شد.* -->
+
