@@ -10,42 +10,6 @@ This project is a sample e-commerce shop built with **Next.js** and **TypeScript
 
 ---
 
-## 🖼️ Screenshots Gallery
-
-<!-- Desktop & Shop Screens: 2 per row -->
-<table>
-  <tr>
-    <td>
-      <img src="/public/screenshots/homeLight.png" width="100%" alt="Home Light Desktop"  />
-    </td>
-    <td>
-      <img src="/public/screenshots/homeBlack.png" width="100%" alt="Home Dark Desktop" />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <img src="/public/screenshots/homeLightMobile.png" width="100%" alt="Home Light Mobile" />
-    </td>
-    <td>
-      <img src="/public/screenshots/homeBlackMobile.png" width="100%" alt="Home Dark Mobile" />
-    </td>
-  </tr>
-    <tr>
-    <td>
-      <img src="/public/screenshots/shopBlack.png" width="100%" alt="Shop Dark Desktop" />
-    </td>
-    <td>
-      <img src="/public/screenshots/cart.png" width="100%" alt="Cart Desktop" />
-    </td>
-  </tr>
-</table>
-
-<!-- Project Structure -->
-[<img src="/public/screenshots/stracture.png"  height='300px' alt="Project Structure" />](/public/screenshots/stracture.png)
-
-
----
-
 ## ✨ Features
 
 | Feature | Description |
@@ -97,3 +61,40 @@ npm run mock
 # Run development server
 npm run dev
 # Open in browser: http://localhost:3000
+
+```
+## 🖼️ Screenshots Gallery
+
+<!-- Desktop & Shop Screens: 2 per row -->
+<table>
+  <tr>
+    <td>
+      <img src="/public/screenshots/homeLight.png" width="100%" alt="Home Light Desktop"  />
+    </td>
+    <td>
+      <img src="/public/screenshots/homeBlack.png" width="100%" alt="Home Dark Desktop" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="/public/screenshots/homeLightMobile.png" width="100%" alt="Home Light Mobile" />
+    </td>
+    <td>
+      <img src="/public/screenshots/homeBlackMobile.png" width="100%" alt="Home Dark Mobile" />
+    </td>
+  </tr>
+    <tr>
+    <td>
+      <img src="/public/screenshots/shopBlack.png" width="100%" alt="Shop Dark Desktop" />
+    </td>
+    <td>
+      <img src="/public/screenshots/cart.png" width="100%" alt="Cart Desktop" />
+    </td>
+  </tr>
+</table>
+
+<!-- Project Structure -->
+[<img src="/public/screenshots/stracture.png"  height='300px' alt="Project Structure" />](/public/screenshots/stracture.png)
+
+
+---
