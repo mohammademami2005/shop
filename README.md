@@ -1,25 +1,29 @@
 # 🛒 Next.js + TypeScript + MUI Shop Project
 
-این پروژه یک فروشگاه نمونه است که با **Next.js** و **TypeScript** توسعه داده شده و از کتابخانه‌های **MUI (Material UI)**، **react-query** و **zustand** استفاده می‌کند. پروژه برای SEO بهینه شده و ترکیبی از **SSR** و **CSR** را پوشش می‌دهد. دیتابیس به‌صورت محلی با یک **mock API** شبیه‌سازی شده است.
+This project is a sample e-commerce shop built with **Next.js** and **TypeScript**, utilizing **MUI (Material UI)**, **react-query**, and **zustand**. The project is SEO optimized and combines **SSR** and **CSR**. The database is simulated locally using a **mock API**.
 
 ---
 
 ## 🎯 Demo (Live Demo)
 
-[demo](https://shop.mohammademamiproject.ir/)
+[View Demo](https://shop.mohammademamiproject.ir/)
 
 ---
 
 ## 🖼️ Screenshots
 
-![Home](/public/screenshots/homeLight.png)
-![Home](/public/screenshots/homeBlack.png)
-![Home](/public/screenshots/homeLightMobile.png)
-![Home](/public/screenshots/homeBlackMobile.png)
-![Shop](/public/screenshots/shopBlack.png)
-![Cart](/public/screenshots/cart.png)
-![Structure](/public/screenshots/stracture.png)
+<!-- Desktop Screens -->
+<img src="/public/screenshots/homeLight.png" width="600" alt="Home Light Desktop" />
+<img src="/public/screenshots/homeBlack.png" width="600" alt="Home Dark Desktop" />
+<img src="/public/screenshots/shopBlack.png" width="600" alt="Shop Dark Desktop" />
+<img src="/public/screenshots/cart.png" width="600" alt="Cart Desktop" />
 
+<!-- Mobile Screens -->
+<img src="/public/screenshots/homeLightMobile.png" width="300" alt="Home Light Mobile" />
+<img src="/public/screenshots/homeBlackMobile.png" width="300" alt="Home Dark Mobile" />
+
+<!-- Project Structure -->
+<img src="/public/screenshots/stracture.png" width="600" alt="Project Structure" />
 
 ---
 
@@ -27,26 +31,26 @@
 
 | Feature | Description |
 |---------|-------------|
-| 📂 Categories | دسته‌بندی محصولات |
-| 🔍 Search & Filter | جستجو و فیلتر بر اساس قیمت و دسته‌بندی |
-| 🏷️ Clean URLs | صفحات با slug خوانا |
-| 🌗 Light/Dark Theme | تم روشن و تاریک با MUI ThemeProvider |
-| 🛒 Cart | مدیریت سبد خرید با zustand و persist در Local Storage |
-| ⚡ Data Fetching | واکشی داده‌ها و cache با react-query |
-| 🕸️ SEO | متا تگ‌ها، Open Graph و ساختار منطقی صفحات |
-| 💻 SSR + CSR | ترکیب رندر سمت سرور و سمت کاربر |
+| 📂 Categories | Product categories |
+| 🔍 Search & Filter | Search and filter by price and category |
+| 🏷️ Clean URLs | Pages with readable slugs |
+| 🌗 Light/Dark Theme | Light and dark theme with MUI ThemeProvider |
+| 🛒 Cart | Cart management using zustand and persisted in Local Storage |
+| ⚡ Data Fetching | Data fetching and caching with react-query |
+| 🕸️ SEO | Meta tags, Open Graph, and logical page structure |
+| 💻 SSR + CSR | Combination of server-side and client-side rendering |
 
 ---
 
 ## 🧭 Project Structure
 
-- **app/** → صفحات و layoutها در Next.js 13+ (App Router)  
-- **providers/** → ThemeProvider و QueryClientProvider  
-- **store/** → مدیریت state با zustand  
-- **theme/** → تم‌های روشن و تاریک با MUI Theme System  
-- **shop/** → صفحات فروشگاه (cart, product, listing)  
-- **components/** → اجزای UI عمومی  
-- **public/** → فایل‌های استاتیک  
+- **app/** → Pages and layouts in Next.js 13+ (App Router)  
+- **providers/** → ThemeProvider and QueryClientProvider  
+- **store/** → State management with zustand  
+- **theme/** → Light and dark themes using MUI Theme System  
+- **shop/** → Shop pages (cart, product, listing)  
+- **components/** → Shared UI components  
+- **public/** → Static files  
 
 ---
 
@@ -55,7 +59,7 @@
 **Requirements:**
 
 - Node.js 16+
-- npm یا yarn
+- npm or yarn
 
 **Steps:**
 
@@ -66,11 +70,11 @@ cd nextjs-mui-shop
 
 # Install dependencies
 npm install
-# یا yarn install
+# or yarn install
 
-# Run mock API (در صورت وجود)
+# Run mock API (if available)
 npm run mock
 
 # Run development server
 npm run dev
-# سپس باز کنید: http://localhost:3000
+# Open in browser: http://localhost:3000
