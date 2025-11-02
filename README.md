@@ -13,15 +13,39 @@ This project is a sample e-commerce shop built with **Next.js** and **TypeScript
 ## 🖼️ Screenshots
 
 ## 🖼️ Screenshots Gallery
+## 🖼️ Screenshots Gallery
 
-[<img src="/public/screenshots/homeLight.png" width="150" alt="Home Light Desktop" />](/public/screenshots/homeLight.png)
-[<img src="/public/screenshots/homeBlack.png" width="150" alt="Home Dark Desktop" />](/public/screenshots/homeBlack.png)
-[<img src="/public/screenshots/shopBlack.png" width="150" alt="Shop Dark Desktop" />](/public/screenshots/shopBlack.png)
-[<img src="/public/screenshots/cart.png" width="150" alt="Cart Desktop" />](/public/screenshots/cart.png)
+<!-- Desktop & Shop Screens: 2 per row -->
+<table>
+  <tr>
+    <td>
+      [<img src="/public/screenshots/homeLight.png" width="50%" alt="Home Light Desktop" />](/public/screenshots/homeLight.png)
+    </td>
+    <td>
+      [<img src="/public/screenshots/homeBlack.png" width="50%" alt="Home Dark Desktop" />](/public/screenshots/homeBlack.png)
+    </td>
+  </tr>
+  <tr>
+    <td>
+      [<img src="/public/screenshots/shopBlack.png" width="50%" alt="Shop Dark Desktop" />](/public/screenshots/shopBlack.png)
+    </td>
+    <td>
+      [<img src="/public/screenshots/cart.png" width="50%" alt="Cart Desktop" />](/public/screenshots/cart.png)
+    </td>
+  </tr>
+  <tr>
+    <td>
+      [<img src="/public/screenshots/homeLightMobile.png" width="50%" alt="Home Light Mobile" />](/public/screenshots/homeLightMobile.png)
+    </td>
+    <td>
+      [<img src="/public/screenshots/homeBlackMobile.png" width="50%" alt="Home Dark Mobile" />](/public/screenshots/homeBlackMobile.png)
+    </td>
+  </tr>
+</table>
 
-[<img src="/public/screenshots/homeLightMobile.png" width="100" alt="Home Light Mobile" />](/public/screenshots/homeLightMobile.png)
-[<img src="/public/screenshots/homeBlackMobile.png" width="100" alt="Home Dark Mobile" />](/public/screenshots/homeBlackMobile.png)
-[<img src="/public/screenshots/stracture.png" width="150" alt="Project Structure" />](/public/screenshots/stracture.png)
+<!-- Project Structure -->
+[<img src="/public/screenshots/stracture.png" width="100%" alt="Project Structure" />](/public/screenshots/stracture.png)
+
 
 ---
 
