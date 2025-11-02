@@ -19,32 +19,32 @@ This project is a sample e-commerce shop built with **Next.js** and **TypeScript
 <table>
   <tr>
     <td>
-      [<img src="/public/screenshots/homeLight.png" width="50%" alt="Home Light Desktop" />](/public/screenshots/homeLight.png)
+      <img src="/public/screenshots/homeLight.png" width="100%" alt="Home Light Desktop"  />
     </td>
     <td>
-      [<img src="/public/screenshots/homeBlack.png" width="50%" alt="Home Dark Desktop" />](/public/screenshots/homeBlack.png)
-    </td>
-  </tr>
-  <tr>
-    <td>
-      [<img src="/public/screenshots/shopBlack.png" width="50%" alt="Shop Dark Desktop" />](/public/screenshots/shopBlack.png)
-    </td>
-    <td>
-      [<img src="/public/screenshots/cart.png" width="50%" alt="Cart Desktop" />](/public/screenshots/cart.png)
+      <img src="/public/screenshots/homeBlack.png" width="100%" alt="Home Dark Desktop" />
     </td>
   </tr>
   <tr>
     <td>
-      [<img src="/public/screenshots/homeLightMobile.png" width="50%" alt="Home Light Mobile" />](/public/screenshots/homeLightMobile.png)
+      <img src="/public/screenshots/homeLightMobile.png" width="100%" alt="Home Light Mobile" />
     </td>
     <td>
-      [<img src="/public/screenshots/homeBlackMobile.png" width="50%" alt="Home Dark Mobile" />](/public/screenshots/homeBlackMobile.png)
+      <img src="/public/screenshots/homeBlackMobile.png" width="100%" alt="Home Dark Mobile" />
+    </td>
+  </tr>
+    <tr>
+    <td>
+      <img src="/public/screenshots/shopBlack.png" width="100%" alt="Shop Dark Desktop" />
+    </td>
+    <td>
+      <img src="/public/screenshots/cart.png" width="100%" alt="Cart Desktop" />
     </td>
   </tr>
 </table>
 
 <!-- Project Structure -->
-[<img src="/public/screenshots/stracture.png" width="100%" alt="Project Structure" />](/public/screenshots/stracture.png)
+[<img src="/public/screenshots/stracture.png"  height='300px' alt="Project Structure" />](/public/screenshots/stracture.png)
 
 
 ---
