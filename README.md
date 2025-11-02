@@ -12,18 +12,16 @@ This project is a sample e-commerce shop built with **Next.js** and **TypeScript
 
 ## 🖼️ Screenshots
 
-<!-- Desktop Screens -->
-<img src="/public/screenshots/homeLight.png" width="600" alt="Home Light Desktop" />
-<img src="/public/screenshots/homeBlack.png" width="600" alt="Home Dark Desktop" />
-<img src="/public/screenshots/shopBlack.png" width="600" alt="Shop Dark Desktop" />
-<img src="/public/screenshots/cart.png" width="600" alt="Cart Desktop" />
+## 🖼️ Screenshots Gallery
 
-<!-- Mobile Screens -->
-<img src="/public/screenshots/homeLightMobile.png" width="300" alt="Home Light Mobile" />
-<img src="/public/screenshots/homeBlackMobile.png" width="300" alt="Home Dark Mobile" />
+[<img src="/public/screenshots/homeLight.png" width="150" alt="Home Light Desktop" />](/public/screenshots/homeLight.png)
+[<img src="/public/screenshots/homeBlack.png" width="150" alt="Home Dark Desktop" />](/public/screenshots/homeBlack.png)
+[<img src="/public/screenshots/shopBlack.png" width="150" alt="Shop Dark Desktop" />](/public/screenshots/shopBlack.png)
+[<img src="/public/screenshots/cart.png" width="150" alt="Cart Desktop" />](/public/screenshots/cart.png)
 
-<!-- Project Structure -->
-<img src="/public/screenshots/stracture.png" width="600" alt="Project Structure" />
+[<img src="/public/screenshots/homeLightMobile.png" width="100" alt="Home Light Mobile" />](/public/screenshots/homeLightMobile.png)
+[<img src="/public/screenshots/homeBlackMobile.png" width="100" alt="Home Dark Mobile" />](/public/screenshots/homeBlackMobile.png)
+[<img src="/public/screenshots/stracture.png" width="150" alt="Project Structure" />](/public/screenshots/stracture.png)
 
 ---
 
