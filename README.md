@@ -6,7 +6,7 @@ This project is a sample e-commerce shop built with **Next.js** and **TypeScript
 
 ## 🎯 Demo (Live Demo)
 
-[View Demo](https://shop.mohammademamiproject.ir/)
+[shop.mohammademamiproject.ir](https://shop.mohammademamiproject.ir/)
 
 ---
 
