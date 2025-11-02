@@ -10,9 +10,6 @@ This project is a sample e-commerce shop built with **Next.js** and **TypeScript
 
 ---
 
-## 🖼️ Screenshots
-
-## 🖼️ Screenshots Gallery
 ## 🖼️ Screenshots Gallery
 
 <!-- Desktop & Shop Screens: 2 per row -->
