@@ -12,7 +12,7 @@ This project is a sample e-commerce shop built with **Next.js** and **TypeScript
 
 ## ✨ Features
 
-| Feature | Description |
+| Feature | Description | 
 |---------|-------------|
 | 📂 Categories | Product categories |
 | 🔍 Search & Filter | Search and filter by price and category |
